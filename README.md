@@ -25,7 +25,7 @@ You do not need to be a perfect programmer before starting. The labs are designe
 | Item | Details |
 |---|---|
 | Course | SCIM211 Simulation Modelling |
-| Students | Second-year Industrial Mathematics and Data Science |
+| Audience | Second-year Industrial Mathematics and Data Science |
 | Duration | 15 weeks |
 | Theory class | 2 hours every week |
 | Lab class | 2 hours every even week |
