@@ -1,54 +1,90 @@
-# Lab 2 Report: Random Numbers and Interarrival Times
+# Lab 2 Report: Can Computers Really Be Random?
 
 ## Student Information
 
-- Name:
-- Student ID:
-- Section:
-- Date:
+Name:
 
-## Theme and Scenario
+Student ID:
 
-Briefly describe why random numbers are needed in the Coffee Shop Simulation Project.
+Date:
+
+## Randomness Challenge
+
+Which sequence looked most random at first?
+
+Why?
+
+Can humans reliably detect randomness?
+
+## Seed Investigation
+
+Record the outputs for each seed.
+
+| Seed | First five values |
+|---:|---|
+| 211 | |
+| 212 | |
+| 213 | |
+
+Why are repeated runs with the same seed identical?
+
+Why is this useful?
 
 ## LCG Results
 
-Record your LCG settings.
+Record the first values from each generator.
 
-| Parameter | Value |
+| Generator | Parameters | First values |
+|---|---|---|
+| A | `a=5, c=0, m=8, x0=3` | |
+| B | `a=5, c=1, m=16, x0=3` | |
+| C | `a=13, c=7, m=31, x0=3` | |
+
+## Period Table
+
+| Generator | Period |
 |---|---:|
-| a | |
-| c | |
-| m | |
-| seed | |
-| number of values | |
+| A | |
+| B | |
+| C | |
 
-Summarise the first 10 generated values.
+Which generator had the longest period?
 
-## Histogram and Scatter Plot
+Why is a short period dangerous?
 
-Describe your histogram of uniform values.
+## Randomness Diagnostics
 
-Describe your scatter plot of `U_i` versus `U_{i+1}`.
+Describe your histogram.
 
-## Exponential Interarrival Times
+Describe your scatter plot of `(U_i, U_{i+1})`.
 
-Explain how you converted uniform values into exponential interarrival times.
+Did you see any suspicious patterns?
 
-Summarise the arrival-time pattern you produced.
+## Arrival Process Investigation
 
-## Investigation
+Complete:
 
-What changed when you used different seeds or a small modulus?
+| Scenario | Arrival rate | Average gap |
+|---|---:|---:|
+| Quiet | 3 | |
+| Normal | 6 | |
+| Rush | 10 | |
 
-## Reflection Questions
+Which hour feels busiest?
 
-1. Why does simulation use pseudo-random numbers instead of truly random numbers?
-2. What role does the seed play?
-3. What visual pattern would make you suspicious of a random number generator?
-4. Why are exponential interarrival times useful for modelling customer arrivals?
-5. How would poor random numbers affect the Coffee Shop Simulation Project?
+What do you predict for the queue?
+
+## Reflection
+
+Write 150-200 words.
+
+Address:
+
+1. Why is reproducibility useful?
+2. Why is a short period dangerous?
+3. Why does a simulation model depend heavily on random numbers?
+4. Which randomness diagnostic did you find most convincing?
 
 ## AI Use Statement
 
-Write your AI use statement here.
+State whether AI tools were used and how.

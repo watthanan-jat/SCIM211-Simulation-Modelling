@@ -1,86 +1,347 @@
-# Lab 2: Random Numbers and Interarrival Times
+# Lab 2: Can Computers Really Be Random?
 
 ## Theme
 
-Random number generation for the Coffee Shop Simulation Project.
+Every simulation model depends on random numbers.
 
-## Scenario
+If the random numbers are poor, the simulation results may be misleading.
 
-The coffee shop needs simulated customer arrivals. Before using built-in random functions, you will study how pseudo-random numbers are generated and how uniform random numbers can be transformed into exponential interarrival times.
+In this lab students investigate:
+
+- pseudo-random numbers
+- seeds
+- reproducibility
+- periods
+- randomness diagnostics
+- customer arrival generation
+
+The lab is designed for a 2-hour session.
 
 ## Learning Objectives
 
-- Implement a linear congruential generator (LCG).
-- Explain seed, sequence, and period.
-- Use histograms and scatter plots to inspect random numbers.
-- Plot `U_i` against `U_{i+1}`.
-- Generate exponential interarrival times for customer arrivals.
+By the end of this lab students should be able to:
 
-## 2-Hour Timing Plan
+1. Explain why computers generate pseudo-random rather than truly random numbers.
+2. Explain the concepts of seed and period.
+3. Implement a linear congruential generator (LCG).
+4. Compare different random-number generators.
+5. Use graphical diagnostics to evaluate randomness.
+6. Generate customer arrival times from uniform random numbers.
+7. Explain why random-number quality matters in simulation.
+
+## Lab Timing
 
 | Time | Activity |
 |---:|---|
-| 0-10 min | Recap Lab 1 and introduce random numbers |
-| 10-25 min | Instructor demo: LCG and seed |
-| 25-45 min | Guided task: generate and inspect uniforms |
-| 45-70 min | Coding task: histogram and scatter plot |
-| 70-100 min | Exponential interarrival times |
-| 100-115 min | Investigation: seed and period effects |
-| 115-120 min | Checkpoint submission |
+| 0-10 min | Motivation and prediction |
+| 10-25 min | Randomness challenge |
+| 25-50 min | Build an LCG |
+| 50-75 min | Diagnosing randomness |
+| 75-100 min | Generating customer arrivals |
+| 100-115 min | Investigation |
+| 115-120 min | Checkpoint |
 
-## Instructor Demo
+## Part 0: Motivation
 
-The instructor will show how an LCG creates a deterministic sequence from:
+Scenario:
+
+The coffee shop owner asks:
+
+> "How do you know your simulation is not just making up nonsense?"
+
+Discussion:
+
+Imagine two simulation teams.
+
+Team A:
+
+Uses a poor random-number generator.
+
+Team B:
+
+Uses a high-quality generator.
+
+Questions:
+
+1. Could they get different simulation results?
+2. Why?
+3. What makes a random number generator good?
+
+## Part A: Randomness Challenge
+
+### Instructor Demo
+
+Show these sequences:
+
+Sequence A:
 
 ```text
-X_{n+1} = (a X_n + c) mod m
+0.13
+0.72
+0.54
+0.19
+0.88
+0.44
+```
+
+Sequence B:
+
+```text
+0.11
+0.22
+0.33
+0.44
+0.55
+0.66
+```
+
+Sequence C:
+
+```text
+0.12
+0.81
+0.12
+0.81
+0.12
+0.81
+```
+
+Students vote:
+
+Which sequence looks most random?
+
+Discussion:
+
+Can humans reliably detect randomness?
+
+## Part B: What is a Seed?
+
+### Instructor Demo
+
+Run:
+
+```python
+rng = np.random.default_rng(211)
+rng.random(5)
+```
+
+Run again.
+
+Questions:
+
+1. Why are the numbers identical?
+2. Is that a bug?
+3. Why is reproducibility important in simulation?
+
+Students repeat with:
+
+```text
+211
+212
+213
+```
+
+and compare outputs.
+
+## Part C: Build Your Own Random Number Generator
+
+Introduce:
+
+```text
+X_(n+1) = (aX_n + c) mod m
 U_n = X_n / m
 ```
 
-The demo will compare two different seeds and discuss why a repeatable random sequence is useful for simulation testing.
+Students complete:
 
-## Guided Task
+```python
+def lcg(a, c, m, x0, n):
+    ...
+```
 
-Use the starter notebook to generate a short LCG sequence. Record the integer values and the corresponding uniform values.
+Test:
 
-Discuss:
+Generator A:
 
-- What happens when the seed changes?
-- What does period mean?
-- Why is a short period a problem?
+```text
+a=5
+c=0
+m=8
+x0=3
+```
 
-## Coding Task
+Generator B:
 
-Complete the TODO cells to:
+```text
+a=5
+c=1
+m=16
+x0=3
+```
 
-- Generate at least 100 uniform values.
-- Draw a histogram of the values.
-- Draw a scatter plot of `U_i` versus `U_{i+1}`.
-- Generate exponential interarrival times using inverse transform logic.
+Generator C:
 
-## Investigation
+```text
+a=13
+c=7
+m=31
+x0=3
+```
 
-Try at least two different seeds and one deliberately small modulus. Compare the histogram, scatter plot, and approximate period.
+## Part D: Find the Period
 
-Then generate customer arrival times from exponential interarrival times and describe what the pattern suggests about the coffee shop.
+Students investigate:
+
+1. Does the sequence repeat?
+2. When?
+3. Which generator has the longest period?
+
+Complete:
+
+| Generator | Period |
+|---|---:|
+| A | |
+| B | |
+| C | |
+
+Discussion:
+
+Why is a short period dangerous?
+
+## Part E: Diagnosing Randomness
+
+Generate 1000 values.
+
+Create:
+
+Histogram
+
+```python
+plt.hist(...)
+```
+
+Questions:
+
+1. Is the histogram roughly uniform?
+2. Are some regions overrepresented?
+
+Then create:
+
+Scatter plot
+
+```text
+(U_i, U_{i+1})
+```
+
+Questions:
+
+1. Do points fill the square?
+2. Do lines or patterns appear?
+3. Why is this bad?
+
+## Part F: From Uniform Numbers to Customer Arrivals
+
+Coffee shop arrival rate:
+
+```text
+lambda = 6 customers/hour
+```
+
+Generate:
+
+```text
+interarrival = -log(U)/lambda
+arrival_times = cumulative sum
+```
+
+Questions:
+
+1. Why are arrival times increasing?
+2. Why are gaps not equal?
+3. Which customer arrives first?
+
+## Part G: Investigation
+
+Compare:
+
+Quiet hour:
+
+```text
+lambda = 3
+```
+
+Normal hour:
+
+```text
+lambda = 6
+```
+
+Rush hour:
+
+```text
+lambda = 10
+```
+
+For each case:
+
+Generate 20 customers.
+
+Plot arrival times.
+
+Complete:
+
+| Scenario | Average gap |
+|---|---:|
+| Quiet | |
+| Normal | |
+| Rush | |
+
+Questions:
+
+1. Which hour feels busiest?
+2. How does arrival rate affect waiting?
+3. What do you predict for the queue?
+
+## Bonus Challenge
+
+The coffee shop experiences a flash sale.
+
+For the first hour:
+
+```text
+lambda = 15
+```
+
+After that:
+
+```text
+lambda = 4
+```
+
+Generate arrivals for the day.
+
+Plot arrival times.
+
+What difficulties might this create?
 
 ## Checkpoint Submission
 
-Submit:
+Students submit:
 
-- Completed `starter.ipynb`.
-- Completed `report_template.md`.
-- Histogram and scatter plot screenshots or summaries.
-- AI use statement.
+1. LCG implementation
+2. Generator period table
+3. Histogram
+4. Scatter plot
+5. Arrival-time plot
+6. Reflection
 
 ## Reflection Questions
 
-1. Why does simulation use pseudo-random numbers instead of truly random numbers?
-2. What role does the seed play?
-3. What visual pattern would make you suspicious of a random number generator?
-4. Why are exponential interarrival times useful for modelling customer arrivals?
-5. How would poor random numbers affect the Coffee Shop Simulation Project?
+Write 150-200 words.
 
-## AI Use Statement
+1. Why is reproducibility useful?
+2. Why is a short period dangerous?
+3. Why does a simulation model depend heavily on random numbers?
+4. Which randomness diagnostic did you find most convincing?
 
-State whether you used AI, what you used it for, and what you checked yourself. If you did not use AI, write: `AI use statement: I did not use AI tools for this lab.`
+Include AI use statement.
