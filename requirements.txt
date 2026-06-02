@@ -1,1 +1,6 @@
-# Placeholder for Python package requirements.
+numpy
+pandas
+matplotlib
+scipy
+jupyter
+pytest
