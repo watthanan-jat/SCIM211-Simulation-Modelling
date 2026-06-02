@@ -1,121 +1,255 @@
 # Lab 1: From Real System to Simulation Model
 
-## Purpose
+## Theme
 
-In this lab, you will move from a real-world coffee shop system to a small deterministic queue model. You will review basic Python tools, identify simulation components, compare simulation worldviews, and implement simple queue calculations.
+Before we simulate, students must understand:
+1. What system are we modelling?
+2. What state variables matter?
+3. What events change the state?
+4. Which simulation worldview should we use?
+5. How do we represent the model in Python?
 
-This lab is the first step in the semester-long Coffee Shop Simulation Project.
+## Learning Objectives
 
-## Learning Outcomes
+By the end of this lab, students should be able to:
+1. Use basic Python libraries for simulation work.
+2. Identify entities, resources, events, activities, and state variables.
+3. Distinguish event-scheduling, process-interaction, and activity-scanning worldviews.
+4. Manually simulate a small coffee shop queue.
+5. Implement a simple deterministic queue calculation in Python.
+6. Interpret waiting time, service start time, and departure time.
 
-By the end of this lab, you should be able to:
-
-- Use basic `numpy`, `pandas`, and `matplotlib` commands.
-- Work with Python lists, arrays, DataFrames, and simple plots.
-- Identify entities, resources, attributes, activities, events, and state variables in a coffee shop system.
-- Explain three simulation worldviews: event scheduling, process interaction, and activity scanning.
-- Manually calculate a small deterministic single-server queue.
-- Implement service start time, service end time, and waiting time in Python.
-- Investigate how one long service time affects later customers.
-
-## 2-Hour Timing Plan
+## Lab Timing
 
 | Time | Activity |
 |---:|---|
-| 0-10 min | Lab briefing and Coffee Shop Simulation Project context |
-| 10-30 min | Python warm-up: lists, arrays, DataFrames, and plots |
-| 30-50 min | Coffee shop system components |
-| 50-70 min | Simulation worldviews and comparison |
-| 70-95 min | Manual deterministic queue calculation |
-| 95-115 min | Python queue implementation and long-service investigation |
-| 115-120 min | Checkpoint submission and reflection |
+| 0-10 min | Setup and lab goal |
+| 10-30 min | Python warm-up |
+| 30-50 min | Simulation components |
+| 50-70 min | Simulation worldviews |
+| 70-95 min | Manual coffee-shop simulation |
+| 95-110 min | Python implementation |
+| 110-120 min | Checkpoint submission |
 
-## Part A: Python Warm-Up
+## Part 0: Setup
 
-Open `starter.ipynb` and complete the warm-up TODO cells.
+Open:
 
-You will review:
+```text
+notebooks/Lab01_SystemConcepts.ipynb
+```
 
-- Python lists for storing customer names or arrival times.
-- `numpy` arrays for numerical calculations.
-- `pandas` DataFrames for tabular customer records.
-- Simple `matplotlib` plots for viewing arrival, service, or waiting-time patterns.
+Run:
 
-Do not worry about advanced programming style in this lab. Focus on making the data clear and checking that each calculation makes sense.
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
 
-## Part B: Coffee Shop System Components
+If libraries do not load:
 
-Consider a small coffee shop with one counter and one barista. Customers arrive, wait if the barista is busy, receive service, and leave.
+```bash
+pip install -r requirements.txt
+```
 
-Identify the following:
+## Part A: Python Warm-up for Simulation
 
-| Component | Meaning in Simulation | Coffee Shop Example |
-|---|---|---|
-| Entity | Object that moves through the system | Customer |
-| Resource | Limited item or worker needed for service | Barista |
-| Attribute | Value attached to an entity | Arrival time, service time, drink type |
-| Activity | Process that takes time | Making a drink |
-| Event | Instant that changes the system | Customer arrival, service start, service end |
-| State variable | Value describing the system at a time | Queue length, barista status, number served |
+The three main libraries for this lab are:
 
-In your report, add one more example for each component.
+- `numpy` = random numbers, arrays, numerical calculations
+- `pandas` = tables and data frames
+- `matplotlib` = plots and visualisation
+
+Use this data:
+
+```python
+arrival = [1, 2, 5, 6, 10]
+service = [3, 4, 2, 3, 2]
+```
+
+### A1. Numerical summaries
+
+Compute:
+
+```python
+np.mean(service)
+np.max(service)
+np.min(service)
+np.cumsum(service)
+```
+
+Ask:
+1. What is the mean service time?
+2. Which customer has the longest service time?
+3. What does cumulative sum mean here?
+
+### A2. Create a DataFrame
+
+Create:
+
+```python
+df = pd.DataFrame({
+    "customer": [1, 2, 3, 4, 5],
+    "arrival": arrival,
+    "service": service
+})
+df
+```
+
+Ask:
+1. Why is a DataFrame useful for simulation output?
+2. What does each row represent?
+3. What does each column represent?
+
+### A3. Plot arrival times
+
+Create:
+
+```python
+plt.plot(df["customer"], df["arrival"], marker="o")
+plt.xlabel("Customer")
+plt.ylabel("Arrival time")
+plt.title("Customer arrival times")
+plt.show()
+```
+
+Ask:
+
+What does this plot tell us?
+
+## Part B: Coffee Shop as a System
+
+Scenario:
+
+A small coffee shop has one barista. Customers arrive, wait if the barista is busy, receive service, and leave.
+
+Complete this table:
+
+| Concept | Coffee Shop Example |
+|---|---|
+| Entity | |
+| Temporary entity | |
+| Permanent entity | |
+| Resource | |
+| Activity | |
+| Event 1 | |
+| Event 2 | |
+| State variable 1 | |
+| State variable 2 | |
+| Input randomness 1 | |
+| Input randomness 2 | |
+| Output measure 1 | |
+| Output measure 2 | |
 
 ## Part C: Simulation Worldviews
 
-Simulation worldviews describe different ways to organise the logic of a simulation.
+There are different ways to describe the same simulation model.
 
-### Event Scheduling
+### C1. Event-Scheduling Worldview
 
-The simulation advances from one event time to the next. The model keeps an event list and updates the system when an event occurs.
+Think like a clock manager.
 
-Coffee shop example: process the next customer arrival or service completion, whichever happens first.
+"What is the next event, and how does it change the state?"
 
-### Process Interaction
+Coffee shop:
 
-Each entity follows a process. A customer process might include arrive, wait, receive service, and leave.
+- Arrival event
+- Departure event
+- Next event = earliest scheduled event
 
-Coffee shop example: each customer follows their own path through the shop.
+Best for discrete-event simulation coding.
 
-### Activity Scanning
+| Event | What changes? |
+|---|---|
+| Arrival | customer enters; queue/server state may change |
+| Departure | customer leaves; next service may start |
 
-The simulation repeatedly checks whether activities can start or finish based on system conditions.
+Pseudocode:
 
-Coffee shop example: check whether a customer is waiting and the barista is free, then start service.
+```text
+Set current time t = 0
+Schedule first arrival
+While shop is open:
+    Choose the next event
+    Move clock to that event time
+    Update system state
+    Schedule future events
+```
 
-### Comparison Table
+Ask:
 
-| Worldview | Main Idea | Strength | Challenge | Coffee Shop Focus |
+Why is this efficient?
+
+### C2. Process-Interaction Worldview
+
+Think like a customer story.
+
+"What happens to one customer from arrival to departure?"
+
+Coffee shop:
+
+```text
+Customer arrives -> waits -> receives service -> leaves
+```
+
+Best for intuitive modelling.
+
+Ask:
+
+Why is this easier to understand than event scheduling?
+
+### C3. Activity-Scanning Worldview
+
+Think like a rule checker.
+
+"At each time step, what activities can happen?"
+
+Coffee shop:
+
+- If a customer arrives, add to queue.
+- If barista is free and queue is non-empty, start service.
+- If service is complete, customer leaves.
+
+Best for simple time-step simulations, but less efficient.
+
+Ask:
+
+Why can this be inefficient?
+
+### C4. Compare the three views
+
+Complete this table:
+
+| Worldview | Main idea | Coffee-shop interpretation | Strength | Weakness |
 |---|---|---|---|---|
-| Event scheduling | Move from event to event | Efficient for event-driven systems | Event list logic can be detailed | Arrival and service-completion events |
-| Process interaction | Describe each entity's journey | Natural for customer-flow models | Requires process control logic | Customer path through waiting and service |
-| Activity scanning | Check conditions for activities | Clear link to rules and conditions | Can be inefficient if many checks are needed | Whether service can start |
+| Event scheduling | | | | |
+| Process interaction | | | | |
+| Activity scanning | | | | |
 
-## Part D: Manual Deterministic Coffee Shop Queue
+## Part D: Manual Simulation
 
-Use the following deterministic customer data:
+Use this table:
 
-| Customer | Arrival Time | Service Time |
+| Customer | Arrival time | Service time |
 |---:|---:|---:|
-| 1 | 0 | 3 |
-| 2 | 1 | 2 |
-| 3 | 2 | 4 |
-| 4 | 5 | 2 |
-| 5 | 6 | 3 |
+| 1 | 1 | 3 |
+| 2 | 2 | 4 |
+| 3 | 5 | 2 |
+| 4 | 6 | 3 |
+| 5 | 10 | 2 |
 
-Assume:
+Complete:
 
-- There is one barista.
-- Service is first-come, first-served.
-- A customer starts service immediately if the barista is free.
-- All times are in minutes.
+| Customer | Arrival | Service starts | Service ends | Waiting time | Barista status after arrival |
+|---:|---:|---:|---:|---:|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+| 4 | | | | | |
+| 5 | | | | | |
 
-For each customer, calculate:
-
-- Service start time
-- Service end time
-- Waiting time
-
-Use these relationships:
+Hints:
 
 ```text
 service_start = max(arrival_time, previous_service_end)
@@ -123,69 +257,66 @@ service_end = service_start + service_time
 waiting_time = service_start - arrival_time
 ```
 
-Complete the manual table in your report before coding.
+Ask:
+1. Which customer waited longest?
+2. What is the average waiting time?
+3. When was the barista idle?
+4. When was the queue longest?
 
-## Part E: Python Queue Implementation
+## Part E: Python Implementation
 
-In `starter.ipynb`, implement the same calculations using Python.
+Complete the notebook code.
 
-Your code should calculate:
+The code should produce a DataFrame with:
 
-- `service_start`
-- `service_end`
-- `waiting_time`
+```text
+customer, arrival, service, start, end, wait
+```
 
-Use a loop so that each customer's service start depends on the previous customer's service end.
+Expected columns:
 
-## Part F: Long-Service Investigation
+```python
+df["start"]
+df["end"]
+df["wait"]
+```
 
-Change the first customer's service time from `3` to a longer value, such as `8`.
+## Part F: Investigation
 
-Investigate:
+Change the first service time from 3 to 10:
 
-- How does this change the waiting time of later customers?
-- Which customer is affected the most?
-- Does the effect disappear quickly, or does it continue through the queue?
-- What does this show about congestion in a queue?
+```python
+service = [10, 4, 2, 3, 2]
+```
 
-Use a DataFrame and at least one simple plot to support your answer.
+Repeat the simulation.
+
+Compare:
+
+| Case | Average waiting time | Longest waiting time |
+|---|---:|---:|
+| Original | | |
+| Slow first customer | | |
+
+Ask:
+1. Why does one slow service affect later customers?
+2. What is a bottleneck?
+3. How might a manager reduce this problem?
 
 ## Checkpoint Submission
 
-Submit the following at the end of the lab:
-
-- Completed `starter.ipynb` with TODO cells filled in.
-- Completed `report_template.md`.
-- A short AI use statement, even if you did not use AI.
-
-This is a checkpoint submission. It is intended to show progress, not a polished final project.
+Students submit:
+1. completed notebook
+2. completed worldview comparison table
+3. original average waiting time
+4. new average waiting time after slow first customer
+5. reflection in `reports/Lab01_Report.md`
 
 ## Reflection Questions
 
-Answer these in `report_template.md`:
-
-1. What is one important difference between a real coffee shop and your simplified model?
-2. Which simulation worldview feels most natural for the coffee shop system? Why?
-3. Why does the service time of one early customer affect later customers?
-4. What state variables would you track in a larger coffee shop simulation?
-5. What would need to change if the coffee shop had two baristas?
-
-## AI Use Statement
-
-Include a short statement in your report:
-
-- Name the AI tool used, if any.
-- Describe what you used it for.
-- State what you checked or changed yourself.
-
-Example:
-
-```text
-AI use statement: I used [tool name] to help debug a plotting error. I checked the DataFrame calculations myself and wrote the interpretation in my own words.
-```
-
-If you did not use AI, write:
-
-```text
-AI use statement: I did not use AI tools for this lab.
-```
+Write 150-200 words:
+1. Which simulation worldview feels most natural to you and why?
+2. Which worldview is probably best for coding a discrete-event simulation?
+3. What was the most important state variable in today's model?
+4. What assumption in today's model is unrealistic?
+5. Include an AI use statement.

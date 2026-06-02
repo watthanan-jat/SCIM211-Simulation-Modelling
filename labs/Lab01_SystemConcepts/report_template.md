@@ -2,99 +2,70 @@
 
 ## Student Information
 
-- Name:
-- Student ID:
-- Section:
-- Date:
+Name:
 
-## 1. Python Warm-Up
+Student ID:
 
-Briefly describe what you created using:
+Date:
 
-- A Python list:
-- A `numpy` array:
-- A `pandas` DataFrame:
-- A simple plot:
+## Part A: Python Warm-up
 
-## 2. Coffee Shop System Components
+Mean service time:
 
-Add your own coffee shop example for each component.
+Longest service time:
 
-| Component | Your Example |
+Meaning of cumulative sum:
+
+## Part B: Coffee Shop System Components
+
+Completed table:
+
+| Concept | Coffee Shop Example |
 |---|---|
 | Entity | |
+| Temporary entity | |
+| Permanent entity | |
 | Resource | |
-| Attribute | |
 | Activity | |
-| Event | |
-| State variable | |
+| Event 1 | |
+| Event 2 | |
+| State variable 1 | |
+| State variable 2 | |
+| Input randomness 1 | |
+| Input randomness 2 | |
+| Output measure 1 | |
+| Output measure 2 | |
 
-## 3. Simulation Worldviews
+## Part C: Simulation Worldviews
 
-In your own words, describe each worldview.
+Completed comparison table:
 
-| Worldview | Your Description | Coffee Shop Example |
-|---|---|---|
-| Event scheduling | | |
-| Process interaction | | |
-| Activity scanning | | |
+| Worldview | Main idea | Coffee-shop interpretation | Strength | Weakness |
+|---|---|---|---|---|
+| Event scheduling | | | | |
+| Process interaction | | | | |
+| Activity scanning | | | | |
 
-Which worldview feels most natural for the coffee shop system? Why?
+## Part D: Manual Simulation
 
-## 4. Manual Queue Calculation
+Average waiting time:
 
-Complete the table before checking your result with Python.
+Longest waiting customer:
 
-| Customer | Arrival Time | Service Time | Service Start | Service End | Waiting Time |
-|---:|---:|---:|---:|---:|---:|
-| 1 | 0 | 3 | | | |
-| 2 | 1 | 2 | | | |
-| 3 | 2 | 4 | | | |
-| 4 | 5 | 2 | | | |
-| 5 | 6 | 3 | | | |
+When was the barista idle?
 
-## 5. Python Queue Result
+## Part F: Investigation
 
-Paste or summarise your final DataFrame.
+Original average waiting time:
 
-```text
-Add your result here.
-```
+Slow-first-customer average waiting time:
 
-What was the average waiting time?
+Explanation:
 
-## 6. Long-Service Investigation
+## Reflection
 
-Describe what happened when the first customer had a long service time.
+Write 150-200 words.
 
-- New first customer service time:
-- Customer most affected:
-- Main pattern observed:
+## AI Use Statement
 
-Use your plot to support your explanation.
-
-## 7. Reflection Questions
-
-1. What is one important difference between a real coffee shop and your simplified model?
-
-2. Which simulation worldview feels most natural for the coffee shop system? Why?
-
-3. Why does the service time of one early customer affect later customers?
-
-4. What state variables would you track in a larger coffee shop simulation?
-
-5. What would need to change if the coffee shop had two baristas?
-
-## 8. AI Use Statement
-
-Write one of the following:
-
-```text
-AI use statement: I did not use AI tools for this lab.
-```
-
-or
-
-```text
-AI use statement: I used [tool name] to help with [task]. I checked [specific work] myself and wrote the final explanation in my own words.
-```
+State whether AI tools were used and how.
