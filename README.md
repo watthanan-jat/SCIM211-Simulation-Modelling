@@ -1,55 +1,77 @@
 # SCIM211 Simulation Modelling
 
-Welcome to **SCIM211 Simulation Modelling**, a second-year course for Industrial Mathematics and Data Science students.
+Welcome to **SCIM211 Simulation Modelling**.
 
-This course introduces simulation as a practical way to study systems involving uncertainty, queues, random behaviour, operational decisions, and performance measurement. Across the semester, students build one connected **Coffee Shop Simulation Project** that grows from a simple queue into a richer model for analysis and recommendation.
+This repository is your home base for the course. You will find the weekly schedule, lab sheets, starter notebooks, report templates, data files, and Python code stubs here.
+
+The course is built around one continuing project: the **Coffee Shop Simulation Project**. We start with a simple real-world question, such as "How long do customers wait?", then gradually add randomness, queues, decisions, data analysis, and recommendations.
+
+## What This Course Is About
+
+Simulation is a way to study systems that are difficult to solve exactly. Instead of only writing formulas, we build a model, run experiments, and use the results to understand what might happen.
+
+In this course, you will practise how to:
+
+- Turn a real situation into a simulation model.
+- Use probability and random numbers in a careful way.
+- Write small Python programs for simulation.
+- Analyse waiting time, profit, customer behaviour, and uncertainty.
+- Explain your assumptions and results clearly.
+
+You do not need to be a perfect programmer before starting. The labs are designed to build skills step by step.
 
 ## Course At A Glance
 
 | Item | Details |
 |---|---|
-| Level | Second-year undergraduate |
-| Programme | Industrial Mathematics and Data Science |
+| Course | SCIM211 Simulation Modelling |
+| Students | Second-year Industrial Mathematics and Data Science |
 | Duration | 15 weeks |
-| Theory | 2 hours every week |
-| Lab | 2 hours every even week |
+| Theory class | 2 hours every week |
+| Lab class | 2 hours every even week |
 | Main project | Coffee Shop Simulation Project |
-| Tools | Python, NumPy, pandas, matplotlib, SciPy, Jupyter |
+| Main tools | Python, NumPy, pandas, matplotlib, SciPy, Jupyter |
 
 ## Start Here
 
-| Page | Purpose |
+If this is your first time opening the repository, start with these pages:
+
+| Page | What You Will Find |
 |---|---|
-| [Syllabus](syllabus.md) | Course aims, topics, learning outcomes, and expectations |
-| [Schedule](schedule.md) | Weekly theory and lab plan |
-| [Assessment](assessment.md) | Assessment structure and submission expectations |
-| [AI Policy](ai_policy.md) | Responsible AI use for labs and project work |
+| [Syllabus](syllabus.md) | What the course covers and what you should be able to do by the end |
+| [Schedule](schedule.md) | What happens each week |
+| [Assessment](assessment.md) | How course work and project work are handled |
+| [AI Policy](ai_policy.md) | How to use AI tools responsibly in this course |
+
+For lab work, go to the relevant folder in [`labs/`](labs/).
 
 ## Coffee Shop Simulation Project
 
-The course labs are connected through one semester-long project. Students gradually model a coffee shop by studying:
+Throughout the semester, we will use a coffee shop as our main example. This gives us one familiar system that can grow with the course.
 
-- Customer arrivals
-- Drink orders and service times
-- Queues and waiting times
-- Rush-hour behaviour
-- Profit and promotion decisions
-- Customer loyalty
-- Input/output analysis and validation
+You will model questions such as:
 
-The project is designed to help students practise both mathematical modelling and clear communication. The goal is not only to run code, but to explain what the model represents, what assumptions were made, and how results should be interpreted.
+- When do customers arrive?
+- How long does each drink take to prepare?
+- How long do customers wait?
+- What happens during rush hour?
+- Should the shop run a matcha promotion?
+- How can we describe customer loyalty?
+- How confident are we in our simulation results?
+
+Each lab adds one new piece to the project. By the end, you should have a clearer sense of how a simulation study is built from data, assumptions, code, output analysis, and judgement.
 
 ## Lab Pathway
 
-| Lab | Topic | Project Role |
+| Lab | Topic | What You Will Do |
 |---:|---|---|
-| [Lab 1](labs/Lab01_SystemConcepts/lab_sheet.md) | From Real System to Simulation Model | Define the coffee shop system and first queue calculations |
-| [Lab 2](labs/Lab02_RandomNumbers/lab_sheet.md) | Random Numbers and Interarrival Times | Generate arrivals using pseudo-random numbers |
-| [Lab 3](labs/Lab03_RandomVariables/lab_sheet.md) | Random Variables and Drink Service Times | Simulate drink orders and service-time variation |
-| [Lab 4](labs/Lab04_MonteCarlo/lab_sheet.md) | Monte Carlo Profit and Promotion Decision | Estimate profit, risk, and promotion outcomes |
-| [Lab 5](labs/Lab05_DES/lab_sheet.md) | Discrete-Event Simulation of an M/M/1 Queue | Compare calm, normal, rush, and overloaded conditions |
-| [Lab 6](labs/Lab06_MarkovChains/lab_sheet.md) | Markov Chains and Customer Loyalty | Model loyalty transitions and retention |
-| [Lab 7](labs/Lab07_Validation/lab_sheet.md) | Validation and Final Recommendation | Use data, replications, confidence intervals, and recommendations |
+| [Lab 1](labs/Lab01_SystemConcepts/lab_sheet.md) | From Real System to Simulation Model | Describe the coffee shop system and calculate a first simple queue |
+| [Lab 2](labs/Lab02_RandomNumbers/lab_sheet.md) | Random Numbers and Interarrival Times | Generate random arrivals and inspect random-number quality |
+| [Lab 3](labs/Lab03_RandomVariables/lab_sheet.md) | Random Variables and Drink Service Times | Simulate drink orders and drink-dependent service times |
+| [Lab 4](labs/Lab04_MonteCarlo/lab_sheet.md) | Monte Carlo Profit and Promotion Decision | Estimate profit, risk, and whether a promotion is worthwhile |
+| [Lab 5](labs/Lab05_DES/lab_sheet.md) | Discrete-Event Simulation of an M/M/1 Queue | Simulate calm, normal, rush, and overloaded queue scenarios |
+| [Lab 6](labs/Lab06_MarkovChains/lab_sheet.md) | Markov Chains and Customer Loyalty | Model how customers move between loyalty states |
+| [Lab 7](labs/Lab07_Validation/lab_sheet.md) | Validation and Final Recommendation | Use data, replications, confidence intervals, and a final recommendation |
 
 ## Weekly Roadmap
 
@@ -71,32 +93,45 @@ The project is designed to help students practise both mathematical modelling an
 | 14 | Input/output analysis | Lab 7 |
 | 15 | Variance reduction, validation, and project wrap-up | - |
 
+## How To Use Each Lab
+
+Each lab folder contains:
+
+- `lab_sheet.md`: what to do during the lab
+- `starter.ipynb`: a Jupyter notebook with TODO cells
+- `report_template.md`: a short report structure for your answers
+
+Recommended workflow:
+
+1. Read the lab sheet first.
+2. Open the starter notebook.
+3. Complete the TODO cells during the lab.
+4. Use the report template to explain your results.
+5. Add your AI use statement before submitting.
+
+The notebooks are intentionally not full solutions. They are there to guide your work while still leaving the modelling and coding decisions to you.
+
 ## Repository Map
 
-| Folder | Contents |
+| Folder | What It Contains |
 |---|---|
 | `lectures/` | Lecture materials |
 | `exercises/` | Practice questions and short activities |
 | `labs/` | Lab sheets, starter notebooks, and report templates |
-| `data/` | Sample datasets for modelling and validation |
-| `src/` | Source-code stubs and reusable simulation helpers |
-| `tests/` | Placeholder tests for future implementations |
+| `data/` | Data files used in labs and validation |
+| `src/` | Python function stubs for future implementation |
+| `tests/` | Placeholder tests for source-code functions |
 | `.github/workflows/` | Automated test workflow |
 
-## Working With The Materials
+## A Note On Learning
 
-Students should read the lab sheet before each lab, complete the TODO cells in the starter notebook, and submit the report template as instructed. Lab work should be kept organised because later labs build on earlier modelling decisions.
+Simulation is not only about producing numbers. A good simulation answer should explain:
 
-All submitted work should be reproducible, clearly explained, and consistent with the course [AI Policy](ai_policy.md).
+- What system was modelled
+- What assumptions were made
+- What random behaviour was included
+- What output was measured
+- What the results suggest
+- What limitations remain
 
-## Learning Focus
-
-By the end of the course, students should be able to:
-
-- Translate a real system into a simulation model.
-- Generate and use random numbers responsibly.
-- Simulate random variables and queue behaviour.
-- Run Monte Carlo and discrete-event simulation experiments.
-- Analyse simulation output using confidence intervals.
-- Discuss assumptions, limitations, and validation.
-- Communicate simulation-based recommendations clearly.
+If your code runs but you cannot explain the model, the work is not finished yet. If your explanation is clear, even a simple model can be valuable.
