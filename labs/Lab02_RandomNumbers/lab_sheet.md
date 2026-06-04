@@ -17,18 +17,6 @@ In this lab students investigate:
 
 The lab is designed for a 2-hour session.
 
-## Learning Objectives
-
-By the end of this lab students should be able to:
-
-1. Explain why computers generate pseudo-random rather than truly random numbers.
-2. Explain the concepts of seed and period.
-3. Implement a linear congruential generator (LCG).
-4. Compare different random-number generators.
-5. Use graphical diagnostics to evaluate randomness.
-6. Generate customer arrival times from uniform random numbers.
-7. Explain why random-number quality matters in simulation.
-
 ## Lab Timing
 
 | Time | Activity |

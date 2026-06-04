@@ -8,14 +8,6 @@ Discrete-event simulation for a single-server coffee shop queue.
 
 The coffee shop manager wants to understand waiting time under calm, normal, rush, and overloaded conditions. You will build a small M/M/1 queue simulation and compare scenarios.
 
-## Learning Objectives
-
-- Explain arrival events and service-completion events.
-- Simulate an M/M/1 queue.
-- Compare calm, normal, rush, and overloaded scenarios.
-- Plot queue length over time.
-- Use simulation results for a manager challenge.
-
 ## 2-Hour Timing Plan
 
 | Time | Activity |

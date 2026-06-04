@@ -8,15 +8,6 @@ Markov chain modelling for coffee shop customer loyalty.
 
 Customers may remain loyal, become occasional visitors, or stop visiting. You will model these loyalty states with a transition matrix and investigate whether a loyalty card improves retention.
 
-## Learning Objectives
-
-- Define states for a customer loyalty Markov chain.
-- Build and check a transition matrix.
-- Simulate one customer path.
-- Simulate many customers.
-- Use matrix powers to study long-run behaviour.
-- Investigate a loyalty-card intervention.
-
 ## 2-Hour Timing Plan
 
 | Time | Activity |

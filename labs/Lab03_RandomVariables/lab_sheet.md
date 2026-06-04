@@ -8,14 +8,6 @@ Random variable simulation for drink-dependent service times.
 
 The coffee shop serves different drinks. Some drinks are quick, while others take longer. You will simulate drink orders, assign service-time distributions, and investigate how a matcha trend changes workload.
 
-## Learning Objectives
-
-- Generate exponential service times.
-- Simulate drink orders with assigned probabilities.
-- Model drink-dependent service times.
-- Compare baseline and matcha-trend scenarios.
-- Interpret how service-time assumptions affect queue performance.
-
 ## 2-Hour Timing Plan
 
 | Time | Activity |

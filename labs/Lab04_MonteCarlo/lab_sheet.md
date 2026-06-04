@@ -8,14 +8,6 @@ Monte Carlo simulation for business decision-making.
 
 The coffee shop is considering a matcha promotion. Demand, service workload, revenue, and cost are uncertain. You will estimate expected profit, bad-day probability, and a confidence interval before making a recommendation.
 
-## Learning Objectives
-
-- Design a Monte Carlo experiment.
-- Estimate expected profit.
-- Estimate bad-day probability.
-- Calculate and interpret a confidence interval.
-- Evaluate a matcha promotion decision using simulation evidence.
-
 ## 2-Hour Timing Plan
 
 | Time | Activity |

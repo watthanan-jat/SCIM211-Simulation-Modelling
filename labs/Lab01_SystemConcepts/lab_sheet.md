@@ -9,16 +9,6 @@ Before we simulate, students must understand:
 4. Which simulation worldview should we use?
 5. How do we represent the model in Python?
 
-## Learning Objectives
-
-By the end of this lab, students should be able to:
-1. Use basic Python libraries for simulation work.
-2. Identify entities, resources, events, activities, and state variables.
-3. Distinguish event-scheduling, process-interaction, and activity-scanning worldviews.
-4. Manually simulate a small coffee shop queue.
-5. Implement a simple deterministic queue calculation in Python.
-6. Interpret waiting time, service start time, and departure time.
-
 ## Lab Timing
 
 | Time | Activity |
