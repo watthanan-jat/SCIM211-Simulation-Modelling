@@ -8,27 +8,15 @@ Monte Carlo simulation for business decision-making.
 
 The coffee shop is considering a matcha promotion. Demand, service workload, revenue, and cost are uncertain. You will estimate expected profit, bad-day probability, and a confidence interval before making a recommendation.
 
-## 2-Hour Timing Plan
+## Example
 
-| Time | Activity |
-|---:|---|
-| 0-10 min | Recap random variables |
-| 10-25 min | Instructor demo: one Monte Carlo trial |
-| 25-45 min | Guided task: profit model assumptions |
-| 45-80 min | Coding task: many trials and summary measures |
-| 80-105 min | Confidence interval and bad-day probability |
-| 105-115 min | Promotion decision discussion |
-| 115-120 min | Checkpoint submission |
+Review one simulated business day and observe how repeating the experiment produces a profit distribution.
 
-## Instructor Demo
-
-The instructor will demonstrate one simulated business day and show how repeating the experiment produces a profit distribution.
-
-## Guided Task
+## Guided Work
 
 Define assumptions for daily demand, average spend, promotion cost, and variable cost. Keep assumptions simple and explain them clearly.
 
-## Coding Task
+## Coding Work
 
 Complete the TODO cells to:
 

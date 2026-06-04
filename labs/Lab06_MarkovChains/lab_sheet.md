@@ -8,27 +8,15 @@ Markov chain modelling for coffee shop customer loyalty.
 
 Customers may remain loyal, become occasional visitors, or stop visiting. You will model these loyalty states with a transition matrix and investigate whether a loyalty card improves retention.
 
-## 2-Hour Timing Plan
+## Example
 
-| Time | Activity |
-|---:|---|
-| 0-10 min | Recap queues and introduce state transitions |
-| 10-25 min | Instructor demo: transition matrix |
-| 25-45 min | Guided task: one customer path |
-| 45-75 min | Coding task: many customers |
-| 75-100 min | Matrix powers and long-run behaviour |
-| 100-115 min | Loyalty-card investigation |
-| 115-120 min | Checkpoint submission |
+Review how rows of a transition matrix represent probabilities of moving from one state to another.
 
-## Instructor Demo
-
-The instructor will show how rows of a transition matrix represent probabilities of moving from one state to another.
-
-## Guided Task
+## Guided Work
 
 Define states such as loyal, occasional, and inactive. Check that each transition matrix row sums to 1.
 
-## Coding Task
+## Coding Work
 
 Complete the notebook TODO cells to simulate one customer path and many customer paths over several weeks.
 

@@ -2,24 +2,12 @@
 
 ## Theme
 
-Before we simulate, students must understand:
+Before you simulate, make sure you can answer:
 1. What system are we modelling?
 2. What state variables matter?
 3. What events change the state?
 4. Which simulation worldview should we use?
 5. How do we represent the model in Python?
-
-## Lab Timing
-
-| Time | Activity |
-|---:|---|
-| 0-10 min | Setup and lab goal |
-| 10-30 min | Python warm-up |
-| 30-50 min | Simulation components |
-| 50-70 min | Simulation worldviews |
-| 70-95 min | Manual coffee-shop simulation |
-| 95-110 min | Python implementation |
-| 110-120 min | Checkpoint submission |
 
 ## Part 0: Setup
 
@@ -69,7 +57,7 @@ np.min(service)
 np.cumsum(service)
 ```
 
-Ask:
+Answer:
 1. What is the mean service time?
 2. Which customer has the longest service time?
 3. What does cumulative sum mean here?
@@ -87,7 +75,7 @@ df = pd.DataFrame({
 df
 ```
 
-Ask:
+Answer:
 1. Why is a DataFrame useful for simulation output?
 2. What does each row represent?
 3. What does each column represent?
@@ -104,7 +92,7 @@ plt.title("Customer arrival times")
 plt.show()
 ```
 
-Ask:
+Answer:
 
 What does this plot tell us?
 
@@ -167,7 +155,7 @@ While shop is open:
     Schedule future events
 ```
 
-Ask:
+Answer:
 
 Why is this efficient?
 
@@ -185,7 +173,7 @@ Customer arrives -> waits -> receives service -> leaves
 
 Best for intuitive modelling.
 
-Ask:
+Answer:
 
 Why is this easier to understand than event scheduling?
 
@@ -203,7 +191,7 @@ Coffee shop:
 
 Best for simple time-step simulations, but less efficient.
 
-Ask:
+Answer:
 
 Why can this be inefficient?
 
@@ -247,7 +235,7 @@ service_end = service_start + service_time
 waiting_time = service_start - arrival_time
 ```
 
-Ask:
+Answer:
 1. Which customer waited longest?
 2. What is the average waiting time?
 3. When was the barista idle?
@@ -288,14 +276,14 @@ Compare:
 | Original | | |
 | Slow first customer | | |
 
-Ask:
+Answer:
 1. Why does one slow service affect later customers?
 2. What is a bottleneck?
 3. How might a manager reduce this problem?
 
 ## Checkpoint Submission
 
-Students submit:
+Submit:
 1. completed notebook
 2. completed worldview comparison table
 3. original average waiting time

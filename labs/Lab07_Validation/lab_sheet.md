@@ -8,27 +8,15 @@ Using input data and output analysis to support a final Coffee Shop Simulation P
 
 The coffee shop has collected sample service-time data in `service_times.csv`. You will compare the data to an exponential service distribution, run 30 simulation replications, calculate confidence intervals, and make a final recommendation.
 
-## 2-Hour Timing Plan
+## Example
 
-| Time | Activity |
-|---:|---|
-| 0-10 min | Recap project model and validation purpose |
-| 10-25 min | Instructor demo: loading service-time data |
-| 25-45 min | Guided task: fit exponential distribution |
-| 45-70 min | Coding task: histogram comparison |
-| 70-100 min | 30 replications and confidence intervals |
-| 100-115 min | Final recommendation |
-| 115-120 min | Checkpoint submission |
+Load `service_times.csv`, calculate basic summary statistics, and decide whether an exponential model is reasonable.
 
-## Instructor Demo
-
-The instructor will load `service_times.csv`, calculate basic summary statistics, and discuss whether an exponential model is reasonable.
-
-## Guided Task
+## Guided Work
 
 Fit an exponential service distribution using the observed mean service time. Compare its shape with the real data.
 
-## Coding Task
+## Coding Work
 
 Complete the notebook TODO cells to:
 

@@ -8,27 +8,15 @@ Random variable simulation for drink-dependent service times.
 
 The coffee shop serves different drinks. Some drinks are quick, while others take longer. You will simulate drink orders, assign service-time distributions, and investigate how a matcha trend changes workload.
 
-## 2-Hour Timing Plan
+## Example
 
-| Time | Activity |
-|---:|---|
-| 0-10 min | Recap random numbers and interarrival times |
-| 10-25 min | Instructor demo: exponential service times |
-| 25-45 min | Guided task: simulate drink orders |
-| 45-75 min | Coding task: drink-dependent service times |
-| 75-105 min | Investigation: matcha trend |
-| 105-115 min | Discussion and interpretation |
-| 115-120 min | Checkpoint submission |
+Review how to sample from an exponential distribution and how different means affect simulated service times.
 
-## Instructor Demo
-
-The instructor will show how to sample from an exponential distribution and how different means affect simulated service times.
-
-## Guided Task
+## Guided Work
 
 Create a small menu with drink probabilities, such as coffee, tea, latte, and matcha. Use random sampling to generate customer drink orders.
 
-## Coding Task
+## Coding Work
 
 Complete the notebook TODO cells to:
 

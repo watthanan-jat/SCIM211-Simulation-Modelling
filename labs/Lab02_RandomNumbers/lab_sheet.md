@@ -6,7 +6,7 @@ Every simulation model depends on random numbers.
 
 If the random numbers are poor, the simulation results may be misleading.
 
-In this lab students investigate:
+In this lab, you investigate:
 
 - pseudo-random numbers
 - seeds
@@ -15,25 +15,11 @@ In this lab students investigate:
 - randomness diagnostics
 - customer arrival generation
 
-The lab is designed for a 2-hour session.
-
-## Lab Timing
-
-| Time | Activity |
-|---:|---|
-| 0-10 min | Motivation and prediction |
-| 10-25 min | Randomness challenge |
-| 25-50 min | Build an LCG |
-| 50-75 min | Diagnosing randomness |
-| 75-100 min | Generating customer arrivals |
-| 100-115 min | Investigation |
-| 115-120 min | Checkpoint |
-
 ## Part 0: Motivation
 
 Scenario:
 
-The coffee shop owner asks:
+The coffee shop owner wants to know:
 
 > "How do you know your simulation is not just making up nonsense?"
 
@@ -57,7 +43,7 @@ Questions:
 
 ## Part A: Randomness Challenge
 
-### Instructor Demo
+### Sequence Check
 
 Show these sequences:
 
@@ -94,7 +80,7 @@ Sequence C:
 0.81
 ```
 
-Students vote:
+Choose:
 
 Which sequence looks most random?
 
@@ -104,7 +90,7 @@ Can humans reliably detect randomness?
 
 ## Part B: What is a Seed?
 
-### Instructor Demo
+### Seed Check
 
 Run:
 
@@ -121,7 +107,7 @@ Questions:
 2. Is that a bug?
 3. Why is reproducibility important in simulation?
 
-Students repeat with:
+Repeat with:
 
 ```text
 211
@@ -140,7 +126,7 @@ X_(n+1) = (aX_n + c) mod m
 U_n = X_n / m
 ```
 
-Students complete:
+Complete:
 
 ```python
 def lcg(a, c, m, x0, n):
@@ -178,7 +164,7 @@ x0=3
 
 ## Part D: Find the Period
 
-Students investigate:
+Investigate:
 
 1. Does the sequence repeat?
 2. When?
@@ -314,7 +300,7 @@ What difficulties might this create?
 
 ## Checkpoint Submission
 
-Students submit:
+Submit:
 
 1. LCG implementation
 2. Generator period table
