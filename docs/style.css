@@ -156,6 +156,7 @@ p {
 }
 
 .info-grid article,
+.objective-grid article,
 .lab-card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -211,6 +212,16 @@ p {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.objective-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.objective-grid article {
+  padding: 22px;
 }
 
 .lab-card {
@@ -304,6 +315,7 @@ footer p {
   }
 
   .info-grid,
+  .objective-grid,
   .lab-grid,
   .material-links {
     grid-template-columns: 1fr;
