@@ -66,12 +66,12 @@ Each lab adds one new piece to the project. By the end, you should have a cleare
 | Lab | Topic | What You Will Do |
 |---:|---|---|
 | [Lab 1](labs/Lab01_SystemConcepts/lab_sheet.md) | From Real System to Simulation Model | Describe the coffee shop system and calculate a first simple queue |
-| [Lab 2](labs/Lab02_RandomNumbers/lab_sheet.md) | Random Numbers and Interarrival Times | Generate random arrivals and inspect random-number quality |
-| [Lab 3](labs/Lab03_RandomVariables/lab_sheet.md) | Random Variables and Drink Service Times | Simulate drink orders and drink-dependent service times |
-| [Lab 4](labs/Lab04_MonteCarlo/lab_sheet.md) | Monte Carlo Profit and Promotion Decision | Estimate profit, risk, and whether a promotion is worthwhile |
-| [Lab 5](labs/Lab05_DES/lab_sheet.md) | Discrete-Event Simulation of an M/M/1 Queue | Simulate calm, normal, rush, and overloaded queue scenarios |
-| [Lab 6](labs/Lab06_MarkovChains/lab_sheet.md) | Markov Chains and Customer Loyalty | Model how customers move between loyalty states |
-| [Lab 7](labs/Lab07_Validation/lab_sheet.md) | Validation and Final Recommendation | Use data, replications, confidence intervals, and a final recommendation |
+| Lab 2 | Random Numbers and Interarrival Times | Releases in Week 4 |
+| Lab 3 | Random Variables and Drink Service Times | Releases in Week 6 |
+| Lab 4 | Monte Carlo Profit and Promotion Decision | Releases in Week 8 |
+| Lab 5 | Discrete-Event Simulation of an M/M/1 Queue | Releases in Week 10 |
+| Lab 6 | Markov Chains and Customer Loyalty | Releases in Week 12 |
+| Lab 7 | Validation and Final Recommendation | Releases in Week 14 |
 
 ## Weekly Roadmap
 
@@ -117,7 +117,7 @@ The notebooks are intentionally not full solutions. They are there to guide your
 |---|---|
 | `lectures/` | Lecture materials |
 | `exercises/` | Practice questions and short activities |
-| `labs/` | Lab sheets, starter notebooks, and report templates |
+| `labs/` | Released lab sheets, starter notebooks, and report templates |
 | `data/` | Data files used in labs and validation |
 | `src/` | Python function stubs for future implementation |
 | `tests/` | Placeholder tests for source-code functions |
