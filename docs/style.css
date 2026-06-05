@@ -128,7 +128,8 @@ a {
 
 .intro,
 .split,
-.materials {
+.materials,
+.project-callout {
   display: grid;
   gap: 34px;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -203,6 +204,41 @@ p {
   border-bottom: 0;
 }
 
+.project-callout {
+  align-items: start;
+  background: #123b35;
+  border-radius: 8px;
+  color: #fff;
+  margin-top: 20px;
+  padding: 48px;
+}
+
+.project-callout p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.project-button {
+  background: var(--warm);
+  color: #2b2418;
+  margin-top: 12px;
+}
+
+.project-points {
+  display: grid;
+  gap: 14px;
+}
+
+.project-points article {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.project-points h3 {
+  color: #fff;
+}
+
 .section-heading {
   margin-bottom: 28px;
   max-width: 760px;
@@ -245,6 +281,19 @@ p {
 .lab-card.future:hover {
   box-shadow: 0 12px 28px rgba(52, 44, 31, 0.07);
   transform: none;
+}
+
+.lab-card.project-card {
+  background: #123b35;
+  color: #fff;
+}
+
+.lab-card.project-card p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.lab-card.project-card span {
+  color: var(--warm);
 }
 
 .lab-card span {
@@ -321,14 +370,16 @@ footer p {
 
   .intro,
   .split,
-  .materials {
+  .materials,
+  .project-callout {
     grid-template-columns: 1fr;
   }
 
   .info-grid,
   .objective-grid,
   .lab-grid,
-  .material-links {
+  .material-links,
+  .project-points {
     grid-template-columns: 1fr;
   }
 
