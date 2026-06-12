@@ -379,7 +379,6 @@ p {
 
 .schedule-table {
   border-collapse: collapse;
-  table-layout: fixed;
   width: 100%;
 }
 
@@ -400,16 +399,21 @@ p {
 
 .schedule-table tbody th {
   color: var(--accent-dark);
-  width: 130px;
+  width: 90px;
 }
 
 .schedule-table td:first-of-type {
   color: var(--ink);
-  width: 230px;
+  width: 205px;
 }
 
 .schedule-table td:last-child {
   color: var(--muted);
+  width: auto;
+}
+
+.schedule-table td:last-child strong {
+  color: var(--ink);
 }
 
 .schedule-table tr:last-child th,
