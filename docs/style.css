@@ -250,14 +250,83 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.objective-grid {
+.objective-grid,
+.clo-list,
+.assessment-grid {
   display: grid;
   gap: 16px;
+}
+
+.objective-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.objective-grid article {
+.objective-grid article,
+.clo-list article,
+.assessment-grid article,
+.grade-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(52, 44, 31, 0.07);
   padding: 22px;
+}
+
+.clo-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.clo-list article {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 72px 1fr;
+}
+
+.clo-list span,
+.assessment-grid span {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.clo-list p {
+  margin: 0;
+}
+
+.assessment-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+}
+
+.assessment-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.assessment-grid span {
+  display: block;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.grade-card h3 {
+  margin-top: 0;
+}
+
+.grade-table {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 72px;
+}
+
+.grade-table span,
+.grade-table strong {
+  border-top: 1px solid var(--line);
+  padding: 9px 0;
+}
+
+.grade-table strong {
+  color: var(--accent-dark);
+  text-align: right;
 }
 
 .lab-card {
@@ -321,6 +390,10 @@ p {
   border-bottom: 0;
 }
 
+.schedule .schedule-break {
+  background: #f3f0e8;
+}
+
 .schedule strong {
   color: var(--accent-dark);
 }
@@ -377,9 +450,16 @@ footer p {
 
   .info-grid,
   .objective-grid,
+  .clo-list,
+  .assessment-grid,
   .lab-grid,
   .material-links,
-  .project-points {
+  .project-points,
+  .assessment-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .clo-list article {
     grid-template-columns: 1fr;
   }
 
