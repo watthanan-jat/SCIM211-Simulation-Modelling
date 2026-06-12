@@ -244,6 +244,15 @@ p {
   max-width: 760px;
 }
 
+.description {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.description p {
+  max-width: 880px;
+}
+
 .lab-grid {
   display: grid;
   gap: 16px;
@@ -399,7 +408,7 @@ p {
 
 .schedule-table tbody th {
   color: var(--accent-dark);
-  width: 90px;
+  width: 68px;
 }
 
 .schedule-table td:first-of-type {
