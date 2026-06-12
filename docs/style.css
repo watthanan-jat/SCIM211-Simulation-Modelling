@@ -89,23 +89,23 @@ a {
 }
 
 .hero-code {
-  color: #fff;
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  color: var(--warm);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 950;
   line-height: 1;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
 .instructor-line {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1rem;
-  font-weight: 700;
+  color: #ffe7bd;
+  font-size: 1.05rem;
+  font-weight: 800;
   margin: 18px 0 0;
 }
 
 .instructor-line a {
-  color: #fff;
-  text-decoration-color: rgba(255, 255, 255, 0.5);
+  color: var(--warm);
+  text-decoration-color: rgba(240, 179, 90, 0.75);
   text-underline-offset: 4px;
 }
 
