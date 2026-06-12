@@ -378,16 +378,27 @@ p {
 }
 
 .schedule div {
-  align-items: center;
+  align-items: start;
   border-bottom: 1px solid var(--line);
   display: grid;
-  gap: 18px;
-  grid-template-columns: 120px 1fr;
-  padding: 14px 18px;
+  gap: 20px;
+  grid-template-columns: 130px 220px minmax(0, 1fr);
+  padding: 16px 18px;
 }
 
 .schedule div:last-child {
   border-bottom: 0;
+}
+
+.schedule .schedule-header {
+  background: var(--accent-dark);
+  color: #fff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.schedule .schedule-header strong {
+  color: #fff;
 }
 
 .schedule .schedule-break {
@@ -396,6 +407,14 @@ p {
 
 .schedule strong {
   color: var(--accent-dark);
+}
+
+.schedule span {
+  color: var(--muted);
+}
+
+.schedule span strong {
+  color: var(--ink);
 }
 
 .material-links {
@@ -465,5 +484,10 @@ footer p {
 
   .schedule div {
     grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .schedule .schedule-header {
+    display: none;
   }
 }
