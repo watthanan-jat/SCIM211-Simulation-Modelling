@@ -88,6 +88,14 @@ a {
   max-width: 760px;
 }
 
+.hero-code {
+  color: #fff;
+  font-size: clamp(3.8rem, 10vw, 8.5rem);
+  font-weight: 950;
+  line-height: 0.9;
+  margin: 0 0 16px;
+}
+
 .hero-copy {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.25rem;
