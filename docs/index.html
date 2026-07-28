@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SCIM211 Simulation Modelling</title>
     <meta name="description" content="Course website for SCIM211 Simulation Modelling.">
-    <link rel="stylesheet" href="style.css?v=ec86eb3">
+    <link rel="stylesheet" href="style.css?v=assessment-20260728">
   </head>
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="#top">SCIM211</a>
         <div class="nav-links">
-          <a href="#project">Project</a>
           <a href="#objectives">Objectives</a>
           <a href="#assessment">Assessment</a>
+          <a href="#schedule">Schedule</a>
           <a href="#labs">Labs</a>
           <a href="#mini-project">Mini Project</a>
-          <a href="#schedule">Schedule</a>
+          <a href="#project">Project</a>
           <a href="#materials">Materials</a>
         </div>
       </nav>
@@ -45,88 +45,20 @@
     </header>
 
     <main>
-      <section class="section intro">
-        <div>
-          <h2>Welcome</h2>
-          <p>
-            SCIM211 is built around one continuing Coffee Shop Simulation Project. We begin with a simple question, such as how long customers wait, then gradually add randomness, queues, decisions, data analysis, and recommendations.
-          </p>
-        </div>
-        <div class="info-grid">
-          <article>
-            <span>1</span>
-            <p>coffee shop system that grows all semester</p>
-          </article>
-          <article>
-            <span>8</span>
-            <p>lab and project sessions for building the model</p>
-          </article>
-          <article>
-            <span>30%</span>
-            <p>applied work through labs and the mini project</p>
-          </article>
-          <article>
-            <span>95%</span>
-            <p>confidence intervals for judging simulation results</p>
-          </article>
-        </div>
-      </section>
-
       <section class="section description">
         <div class="section-heading">
-          <p class="eyebrow">Course Description</p>
-          <h2>Official Course Description</h2>
+          <p class="eyebrow">What You Will Learn</p>
+          <h2>Course Description</h2>
         </div>
         <p>
           The importance of simulation; example models; generating random numbers; simulating random variables; Monte Carlo simulation; modelling inputs; analysing outputs; Markov chains and discrete events; discrete-event simulation; variance reduction techniques; model validation; and computer techniques for simulation.
         </p>
       </section>
 
-      <section id="project" class="section split">
-        <div>
-          <p class="eyebrow">Semester Project</p>
-          <h2>Coffee Shop Simulation Project</h2>
-          <p>
-            The project models customer arrivals, drink orders, service times, queue behaviour, profit, customer loyalty, and uncertainty. Each lab adds one new modelling idea to the same familiar system.
-          </p>
-        </div>
-        <ul class="check-list">
-          <li>Build small Python simulations step by step.</li>
-          <li>Connect probability concepts to practical decisions.</li>
-          <li>Use plots, tables, and confidence intervals to explain results.</li>
-          <li>Write clear assumptions, limitations, and recommendations.</li>
-        </ul>
-      </section>
-
-      <section id="mini-project" class="section project-callout">
-        <div>
-          <p class="eyebrow">Mini Project</p>
-          <h2>Coffee Shop Simulation Decision Challenge</h2>
-          <p>
-            Build a reusable coffee-shop simulation model, compare a baseline policy with an improvement policy, and respond to an unseen operational stress test near the end of the course.
-          </p>
-          <a class="button project-button" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/mini_project.md">View Project Outline</a>
-        </div>
-        <div class="project-points">
-          <article>
-            <h3>Build</h3>
-            <p>Model arrivals, drink choices, service times, baristas, queues, outputs, and optional loyalty behaviour.</p>
-          </article>
-          <article>
-            <h3>Compare</h3>
-            <p>Evaluate a baseline system against a policy such as adding a barista, simplifying the menu, or running a promotion.</p>
-          </article>
-          <article>
-            <h3>Defend</h3>
-            <p>Use replications, confidence intervals, validation checks, and limitations to support a practical recommendation.</p>
-          </article>
-        </div>
-      </section>
-
       <section id="objectives" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Course Learning Outcomes</p>
-          <h2>What This Course Builds</h2>
+          <p class="eyebrow">What This Course Builds</p>
+          <h2>Course Learning Outcomes</h2>
         </div>
         <div class="clo-list">
           <article>
@@ -158,30 +90,30 @@
 
       <section id="assessment" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Assessment and Grades</p>
-          <h2>How The Course Is Assessed</h2>
+          <p class="eyebrow">How The Course Is Assessed</p>
+          <h2>Assessment and Grades</h2>
         </div>
         <div class="assessment-layout">
           <div class="assessment-grid">
             <article>
               <span>50%</span>
-              <h3>Exam</h3>
-              <p>Individual understanding of simulation concepts, calculations, and interpretation.</p>
+              <h3>Examinations</h3>
+              <p>Midterm examination: 25%<br>Final examination: 25%</p>
             </article>
             <article>
               <span>21%</span>
-              <h3>Lab Exercise</h3>
-              <p>Practical progress through the coding and modelling work developed across the labs.</p>
+              <h3>Lab Exercises</h3>
+              <p>Seven hands-on lab sessions with questions and answers to check your understanding.</p>
             </article>
             <article>
               <span>20%</span>
-              <h3>Quiz</h3>
-              <p>Regular checks on core concepts, methods, and short applied reasoning.</p>
+              <h3>Quizzes</h3>
+              <p>Four quizzes are offered. Your best two quiz scores count toward your final grade.</p>
             </article>
             <article>
               <span>9%</span>
               <h3>Mini Project</h3>
-              <p>Final applied challenge based on adapting and explaining a simulation model.</p>
+              <p>Group project culminating in a Week 16 challenge that applies your team’s simulation model to an assigned task.</p>
             </article>
           </div>
           <div class="grade-card">
@@ -198,54 +130,61 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="labs" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Lab Pathway</p>
-          <h2>What You Will Build</h2>
-        </div>
-        <div class="lab-grid">
-          <a class="lab-card" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/labs/Lab01_SystemConcepts/lab_sheet.md">
-            <span>Lab 1</span>
-            <h3>From Real System to Simulation Model</h3>
-            <p>Describe the coffee shop system and calculate a first simple queue.</p>
-          </a>
-          <article class="lab-card future">
-            <span>Lab 2</span>
-            <h3>Random Numbers</h3>
-            <p>Releases in Week 4.</p>
+        <div class="assessment-details">
+          <article class="assessment-policy">
+            <p class="eyebrow">Seven Lab Sessions</p>
+            <h3>Lab Exercise Policy</h3>
+            <ul>
+              <li>Attendance is compulsory and will be monitored. If you are unable to attend a lab session, you must inform your instructor in advance.</li>
+              <li>Each lab consists of several exercises. All exercises must be completed to earn full marks.</li>
+              <li>During assessment, you will be asked questions to demonstrate your understanding. Marks may be withheld if you cannot explain the problem and your solution.</li>
+              <li>The instructor and lab assistants will help you think through problems, but they will not write or debug your programs for you.</li>
+              <li>Submit your work during the scheduled lab session. Work for Lab <em>n</em> may also be submitted before noon (12:00) at the following lab session, Lab <em>n+1</em>. No marks will be awarded after that deadline.</li>
+              <li>Normal assessment rules apply to absence. You must provide a valid reason for missing a lab; medical absence requires a doctor’s note. You should make up missed lab work in your own time.</li>
+            </ul>
           </article>
-          <article class="lab-card future">
-            <span>Lab 3</span>
-            <h3>Random Variables</h3>
-            <p>Releases in Week 6.</p>
+          <article class="assessment-policy">
+            <p class="eyebrow">Understanding and Completion</p>
+            <h3>Lab Scoring Guide</h3>
+            <div class="lab-score-wrap">
+              <table class="lab-score-table">
+                <thead>
+                  <tr>
+                    <th>Score</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>0</th>
+                    <td>Absent or completes less than 50% of the exercises.</td>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <td>Completes at least 50% of the exercises.</td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td>Completes all exercises.</td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td>Completes all exercises and answers questions promptly.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </article>
-          <article class="lab-card future">
-            <span>Lab 4</span>
-            <h3>Monte Carlo</h3>
-            <p>Releases in Week 8.</p>
+          <article class="assessment-policy quiz-policy">
+            <p class="eyebrow">Best Two Scores Count</p>
+            <h3>Quiz Policy</h3>
+            <p>
+              Four quizzes will be held during lecture sessions in Weeks 3, 7, 13, and 17. Your best two quiz scores will count toward your final grade.
+            </p>
+            <p>
+              There are no replacement quizzes under any circumstances. Because only the best two of four scores are counted, you are responsible for attending at least two quiz sessions during the term.
+            </p>
           </article>
-          <article class="lab-card future">
-            <span>Lab 5</span>
-            <h3>Discrete-Event Simulation</h3>
-            <p>Releases in Week 10.</p>
-          </article>
-          <article class="lab-card future">
-            <span>Lab 6</span>
-            <h3>Markov Chains</h3>
-            <p>Releases in Week 12.</p>
-          </article>
-          <article class="lab-card future">
-            <span>Lab 7</span>
-            <h3>Validation</h3>
-            <p>Releases in Week 14.</p>
-          </article>
-          <a class="lab-card project-card" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/mini_project.md">
-            <span>Mini Project</span>
-            <h3>Coffee Shop Simulation Decision Challenge</h3>
-            <p>Build a reusable simulation model, compare policies, and respond to an unseen stress-test scenario.</p>
-          </a>
         </div>
       </section>
 
@@ -370,11 +309,11 @@
               <tr>
                 <th rowspan="2">Week 16</th>
                 <td>Tue 17 Nov<br>10:00-12:00</td>
-                <td>Lecture: Project consultation.</td>
+                <td><strong>Project Challenge:</strong> Apply your group’s simulation model to an assigned task.</td>
               </tr>
               <tr>
                 <td>Wed 18 Nov<br>10:00-12:00</td>
-                <td><strong>Lab 8:</strong> Project work session.</td>
+                <td><strong>Lab 8:</strong> Project Challenge work and submission session.</td>
               </tr>
               <tr>
                 <th>Week 17</th>
@@ -386,6 +325,98 @@
         </div>
       </section>
 
+      <section id="labs" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">What You Will Build</p>
+          <h2>Lab Pathway</h2>
+          <p class="section-intro">
+            Your mission is to transform a busy coffee shop into a simulation you can trust. Each lab unlocks one new part of the model, and every decision carries forward to the Week 16 Project Challenge.
+          </p>
+        </div>
+        <div class="lab-grid">
+          <a class="lab-card" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/labs/Lab01_SystemConcepts/lab_sheet.md">
+            <span>Lab 1 · Map the Café</span>
+            <h3>Enter the System</h3>
+            <p>Investigate the customers, baristas, resources, events, and queues—then run your first coffee-shop simulation by hand and in Python.</p>
+          </a>
+          <article class="lab-card future">
+            <span>Lab 2 · Week 4</span>
+            <h3>Crack the Randomness Code</h3>
+            <p>Discover how computers create repeatable “random” numbers and use them to generate the café’s unpredictable arrivals.</p>
+          </article>
+          <article class="lab-card future">
+            <span>Lab 3 · Week 6</span>
+            <h3>Bring the Café to Life</h3>
+            <p>Turn random numbers into realistic arrival and drink-service times so every simulated customer has a different experience.</p>
+          </article>
+          <article class="lab-card future">
+            <span>Lab 4 · Week 8</span>
+            <h3>Should We Run the Promotion?</h3>
+            <p>Use Monte Carlo experiments to compare profit and risk, then decide whether a new promotion is worth launching.</p>
+          </article>
+          <article class="lab-card future">
+            <span>Lab 5 · Week 10</span>
+            <h3>Build the Queue Engine</h3>
+            <p>Make the simulation clock tick as customers arrive, wait, order, and leave—and reveal where the longest delays occur.</p>
+          </article>
+          <article class="lab-card future">
+            <span>Lab 6 · Week 12</span>
+            <h3>Predict Who Comes Back</h3>
+            <p>Model customer loyalty with Markov chains and explore how today’s experience may change tomorrow’s behaviour.</p>
+          </article>
+          <article class="lab-card future">
+            <span>Lab 7 · Week 14</span>
+            <h3>Can You Trust Your Model?</h3>
+            <p>Challenge your assumptions, compare the model with evidence, and turn simulation output into a recommendation you can defend.</p>
+          </article>
+          <article class="lab-card project-card">
+            <span>Final Mission · Week 16</span>
+            <h3>Face the Project Challenge</h3>
+            <p>Bring every piece together as a team, adapt your simulation to an assigned scenario, and defend the decision your evidence supports.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mini-project" class="section project-callout">
+        <div>
+          <p class="eyebrow">Mini Project</p>
+          <h2>Coffee Shop Simulation Decision Challenge</h2>
+          <p>
+            Work in a group to build a reusable coffee-shop simulation model and compare a baseline policy with an improvement policy. In Week 16, your group will apply the model it has built to an assigned Project Challenge.
+          </p>
+        </div>
+        <div class="project-points">
+          <article>
+            <h3>Build</h3>
+            <p>Model arrivals, drink choices, service times, baristas, queues, outputs, and optional loyalty behaviour.</p>
+          </article>
+          <article>
+            <h3>Compare</h3>
+            <p>Evaluate a baseline system against a policy such as adding a barista, simplifying the menu, or running a promotion.</p>
+          </article>
+          <article>
+            <h3>Defend</h3>
+            <p>Use replications, confidence intervals, validation checks, and limitations to support a practical recommendation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="project" class="section split">
+        <div>
+          <p class="eyebrow">Semester Project</p>
+          <h2>Coffee Shop Simulation Project</h2>
+          <p>
+            The project models customer arrivals, drink orders, service times, queue behaviour, profit, customer loyalty, and uncertainty. Each lab adds one new modelling idea to the same familiar system.
+          </p>
+        </div>
+        <ul class="check-list">
+          <li>Build small Python simulations step by step.</li>
+          <li>Connect probability concepts to practical decisions.</li>
+          <li>Use plots, tables, and confidence intervals to explain results.</li>
+          <li>Write clear assumptions, limitations, and recommendations.</li>
+        </ul>
+      </section>
+
       <section id="materials" class="section materials">
         <div>
           <p class="eyebrow">Course Materials</p>
@@ -395,7 +426,6 @@
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/syllabus.md">Syllabus</a>
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/schedule.md">Schedule</a>
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/assessment.md">Assessment</a>
-          <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/mini_project.md">Mini Project</a>
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/exercises/index.md">Practice Exercises</a>
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/ai_policy.md">AI Policy</a>
           <a href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/tree/main/data">Data</a>
