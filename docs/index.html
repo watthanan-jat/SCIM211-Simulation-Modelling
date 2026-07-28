@@ -18,7 +18,6 @@
           <a href="#schedule">Schedule</a>
           <a href="#labs">Labs</a>
           <a href="#mini-project">Mini Project</a>
-          <a href="#project">Project</a>
           <a href="#materials">Materials</a>
         </div>
       </nav>
@@ -332,19 +331,22 @@
           <p class="eyebrow">What You Will Build</p>
           <h2>Lab Pathway</h2>
           <p class="section-intro">
-            Your mission is to transform a busy coffee shop into a simulation you can trust. Each lab unlocks one new part of the model, and every decision carries forward to the Week 16 Project Challenge.
+            All seven labs form one semester-long Coffee Shop Simulation Project, not seven separate exercises. Starting with a busy cafe, you will gradually model customer arrivals, drink choices, service times, baristas, queues, profit, customer loyalty, and uncertainty.
+          </p>
+          <p class="section-intro">
+            Each lab unlocks one new part of the same model. You will build Python simulations step by step, connect probability to practical decisions, use plots, tables, and confidence intervals to explain results, and develop clear assumptions, limitations, and recommendations. Everything carries forward to the Week 16 Project Challenge.
           </p>
         </div>
         <div class="lab-grid">
           <a class="lab-card" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/labs/Lab01_SystemConcepts/lab_sheet.md">
             <span>Lab 1 · Map the Café</span>
             <h3>Enter the System</h3>
-            <p>Investigate the customers, baristas, resources, events, and queues—then run your first coffee-shop simulation by hand and in Python.</p>
+            <p>Investigate the customers, baristas, resources, events, and queues, then run your first coffee-shop simulation by hand and in Python.</p>
           </a>
           <article class="lab-card future">
             <span>Lab 2 · Week 4</span>
             <h3>Crack the Randomness Code</h3>
-            <p>Discover how computers create repeatable “random” numbers and use them to generate the café’s unpredictable arrivals.</p>
+            <p>Discover how computers create repeatable “random” numbers and use them to generate the cafe’s unpredictable arrivals.</p>
           </article>
           <article class="lab-card future">
             <span>Lab 3 · Week 6</span>
@@ -359,7 +361,7 @@
           <article class="lab-card future">
             <span>Lab 5 · Week 10</span>
             <h3>Build the Queue Engine</h3>
-            <p>Make the simulation clock tick as customers arrive, wait, order, and leave—and reveal where the longest delays occur.</p>
+            <p>Make the simulation clock tick as customers arrive, wait, order, and leave, and reveal where the longest delays occur.</p>
           </article>
           <article class="lab-card future">
             <span>Lab 6 · Week 12</span>
@@ -403,22 +405,6 @@
         </div>
       </section>
 
-      <section id="project" class="section split">
-        <div>
-          <p class="eyebrow">Semester Project</p>
-          <h2>Coffee Shop Simulation Project</h2>
-          <p>
-            The project models customer arrivals, drink orders, service times, queue behaviour, profit, customer loyalty, and uncertainty. Each lab adds one new modelling idea to the same familiar system.
-          </p>
-        </div>
-        <ul class="check-list">
-          <li>Build small Python simulations step by step.</li>
-          <li>Connect probability concepts to practical decisions.</li>
-          <li>Use plots, tables, and confidence intervals to explain results.</li>
-          <li>Write clear assumptions, limitations, and recommendations.</li>
-        </ul>
-      </section>
-
       <section id="materials" class="section materials">
         <div>
           <p class="eyebrow">Course Materials</p>
@@ -439,7 +425,20 @@
     <footer>
       <p>SCIM211 Simulation Modelling · Coffee Shop Simulation Project</p>
       <p>Instructor: <a href="https://watthanan-jat.github.io/">Asst. Prof. Dr. Watthanan Jatuviriyapornchai</a></p>
-      <p>Updated 12 June 2026</p>
+      <p>Updated <time id="last-updated" datetime="2026-07-29">29 July 2026</time></p>
     </footer>
+    <script>
+      const lastUpdated = new Date(document.lastModified);
+      const lastUpdatedElement = document.getElementById("last-updated");
+
+      if (!Number.isNaN(lastUpdated.getTime())) {
+        lastUpdatedElement.textContent = new Intl.DateTimeFormat("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(lastUpdated);
+        lastUpdatedElement.dateTime = lastUpdated.toISOString();
+      }
+    </script>
   </body>
 </html>
