@@ -2,7 +2,6 @@
 
 ## Course Syllabus — Semester 1, Academic Year 2026
 
-This syllabus is the student-facing guide to SCIM211. It summarises the official course specification, explains how the course will run, and sets out the assessment and participation requirements.
 
 ## 1. Course Information
 
