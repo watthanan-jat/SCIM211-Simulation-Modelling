@@ -19,23 +19,24 @@
 | Co-requisite | None |
 | Latest course-specification revision | 10 June 2026 |
 
-The official credit structure is 3 hours of theory and 6 hours of self-study per week. For the 2026 delivery, scheduled class meetings follow the timetable in Section 8, with weekly Tuesday sessions and designated Wednesday lab or project sessions.
+The official credit structure is 3 hours of theory and 6 hours of self-study per week. 
+
 
 ## 2. Instructor
 
 **Asst. Prof. Dr. Watthanan Jatuviriyapornchai (WJ)**<br>
-Department of Mathematics, Faculty of Science<br>
+B203/8 Department of Mathematics, Faculty of Science<br>
 Telephone: 02-201-5356<br>
 Email: [watthanan.jat@mahidool.ac.th](mailto:watthanan.jat@mahidool.ac.th)
 
-The instructor is both the course coordinator and course-responsible instructor. Lab assistants will support designated lab and project sessions.
+The instructor is both the course coordinator and course-responsible instructor. 
+Lab assistants will support designated lab and project sessions.
 
 ## 3. Course Goals
 
 The course introduces the fundamental principles and applications of simulation modelling as a tool for analysing complex systems. It develops the theoretical and practical skills required to design, implement, run, and analyse simulation models.
 
 By connecting simulation to mathematics and data science, the course prepares students to:
-
 - represent a real system as a model;
 - generate and control random behaviour;
 - implement Monte Carlo and discrete-event simulations;
@@ -61,7 +62,6 @@ On completion of the course, students will be able to:
 ## 6. Learning and Teaching Approach
 
 The course combines:
-
 - interactive lectures and guided discussion;
 - worked examples and short exercises;
 - experience-based case studies;
@@ -77,9 +77,9 @@ The continuing context is a **Coffee Shop Simulation Project**. Each lab adds a 
 
 | Assessment | Weight | Key information |
 |---|---:|---|
-| Midterm examination | 25% | Individual written examination |
-| Final examination | 25% | Individual written examination |
-| Lab exercises | 21% | Seven assessed hands-on lab sessions |
+| Midterm examination | 25% | Individual 3-hour written examination |
+| Final examination | 25% | Individual 3-hour written examination |
+| Lab exercises | 21% | 7 assessed hands-on lab sessions |
 | Quizzes | 20% | Four quizzes offered; best two scores count |
 | Group Mini Project | 9% | Group simulation project and Week 16 Project Challenge |
 | **Total** | **100%** |  |
@@ -89,7 +89,6 @@ Assessment is designed to measure conceptual understanding, computational skills
 ### 7.1 Examination Policy
 
 The examination component is worth 50% in total:
-
 - Midterm examination: 25%
 - Final examination: 25%
 
@@ -98,7 +97,6 @@ There is no re-examination offered as part of this course. University and Facult
 ### 7.2 Lab Exercise Policy
 
 Seven lab exercises contribute 21% of the final grade.
-
 - Attendance is compulsory and will be monitored.
 - If you cannot attend a lab, inform the instructor in advance.
 - Each lab contains several required exercises. Complete all exercises to be eligible for full marks.
@@ -191,14 +189,6 @@ Performance is evaluated according to Faculty of Science and Mahidol University 
 
 ## 10. Required and Suggested Resources
 
-### Required Texts
-
-1. Ross, S. M. *Simulation*.
-2. Law, A. M. *Simulation Modeling and Analysis*.
-
-### Suggested Text
-
-Banks, J., Carson, J. S. II, Nelson, B. L., Nicol, D. M., and Shahabudeen, P. *Discrete-Event System Simulation*.
 
 ### Course Materials
 
@@ -210,6 +200,13 @@ Lecture notes will be posted in the course Google Classroom.
 
 Students should retain an organised copy of their notebooks, code, data, results, and feedback because later labs and the Mini Project build on earlier work.
 
+### Suggested Texts
+
+1. Ross, S. M. *Simulation*.
+2. Law, A. M. *Simulation Modeling and Analysis*.
+3. Banks, J., Carson, J. S. II, Nelson, B. L., Nicol, D. M., and Shahabudeen, P. *Discrete-Event System Simulation*.
+
+   
 ## 11. Communication, Conduct, and Responsible Work
 
 - Google Classroom is the official channel for class communication, announcements, and submission of assessed work.
@@ -237,7 +234,6 @@ Email: [scedmu.133@gmail.com](mailto:scedmu.133@gmail.com)
 ## 13. Course Evaluation and Improvement
 
 The course is reviewed using:
-
 - student evaluation of the instructor;
 - course evaluation;
 - student learning records and achievement of the CLOs; and
