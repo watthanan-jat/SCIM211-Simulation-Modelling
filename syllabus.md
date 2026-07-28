@@ -215,7 +215,7 @@ Students should retain an organised copy of their notebooks, code, data, results
 - AI may support your learning, but it may not replace your own reasoning, modelling decisions, or understanding.
 - Follow Faculty and University rules for assessment, academic integrity, attendance, and evidence for absence.
 - Use course data and computing resources responsibly.
-- Follow the course [AI Policy](ai_policy.md) when using generative AI or coding assistants.
+- Follow the course [Academic Integrity and AI Policy](ai_policy.md) when using references, generative AI, or coding assistants.
 - Check course announcements regularly for approved updates to dates, rooms, or assessment arrangements.
 
 ## 12. Student Questions and Appeals
