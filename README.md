@@ -41,7 +41,7 @@ If this is your first time opening the repository, start with these pages:
 | [Syllabus](syllabus.md) | What the course covers and what you should be able to do by the end |
 | [Schedule](schedule.md) | What happens each week |
 | [Assessment](assessment.md) | How course work and project work are handled |
-| [Mini Project](mini_project.md) | The Coffee Shop Simulation Decision Challenge |
+| Mini Project | The Coffee Shop Simulation Decision Challenge; outline to be released |
 | [AI Policy](ai_policy.md) | How to use AI tools responsibly in this course |
 
 For lab work, go to the relevant folder in [`labs/`](labs/).
@@ -64,7 +64,7 @@ Each lab adds one new piece to the project. By the end, you should have a cleare
 
 The semester mini project is the **Coffee Shop Simulation Decision Challenge**. You will build a reusable simulation model, compare a baseline policy with an improvement policy, and respond to an unseen stress-test scenario near the end of the course.
 
-See the full project outline here: [Mini Project](mini_project.md).
+The full project outline will be released later in the course.
 
 ## Lab Pathway
 
