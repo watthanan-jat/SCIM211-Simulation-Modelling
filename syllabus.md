@@ -122,9 +122,9 @@ Seven lab exercises contribute 21% of the final grade.
 
 ### 7.3 Quiz Policy
 
-Four quizzes will be held during lecture sessions in **Weeks 3, 7, 13, and 17**.
+Four quizzes will be held during lecture sessions in **Weeks 5, 7, 13, and 17**.
 
-- Only the best two quiz scores count toward the final grade.
+- Only the best two quiz scores count toward the final grade
 - The two counted quizzes contribute 20% in total.
 - There are no replacement quizzes under any circumstances.
 - Because the best two of four scores are used, students are responsible for attending at least two quiz sessions during the semester.
