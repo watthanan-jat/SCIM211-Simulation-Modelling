@@ -17,10 +17,10 @@ Teaching begins on **Tuesday 4 August 2026**. There is no regular class during *
 | 1 | Tue 4 Aug | Introduction; why simulate; course journey; coffee-shop running example |
 | 2 | Tue 11 Aug | System concepts: entities, resources, attributes, activities, events, and state variables |
 | 2 | Wed 12 Aug | **Lab 1:** From Real System to Simulation Model |
-| 3 | Tue 18 Aug | Probability review: random variables, distributions, expectation, variance, and sampling ideas; **Quiz 1** |
+| 3 | Tue 18 Aug | Probability review: random variables, distributions, expectation, variance, and sampling ideas |
 | 4 | Tue 25 Aug | Random-number generation: pseudo-random numbers, seeds, linear congruential generators, and periods |
 | 4 | Wed 26 Aug | **Lab 2:** Can Computers Really Be Random? |
-| 5 | Tue 1 Sep | Simulating random variables I: inverse transform and discrete random-variable simulation |
+| 5 | Tue 1 Sep | Simulating random variables I: inverse transform and discrete random-variable simulation; **Quiz 1** |
 | 6 | Tue 8 Sep | Simulating random variables II: accept–reject ideas, exponential service times, and input generation |
 | 6 | Wed 9 Sep | **Lab 3:** From Random Numbers to Random Variables |
 | 7 | Tue 15 Sep | Monte Carlo I: repeated random experiments, expected values, probabilities, and sampling error; **Quiz 2** |

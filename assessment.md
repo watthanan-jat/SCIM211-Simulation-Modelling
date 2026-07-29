@@ -74,7 +74,7 @@ Four quizzes will be held during lecture sessions:
 
 | Quiz | Scheduled week |
 |---:|---:|
-| Quiz 1 | Week 3 |
+| Quiz 1 | Week 5 |
 | Quiz 2 | Week 7 |
 | Quiz 3 | Week 13 |
 | Quiz 4 | Week 17 |
