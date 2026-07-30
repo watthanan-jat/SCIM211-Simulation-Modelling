@@ -52,12 +52,12 @@ The importance of simulation; example models; generating random numbers; simulat
 
 On completion of the course, students will be able to:
 
-1. **CLO1 — Explain:** Explain the fundamental concepts and importance of simulation modelling in solving complex problems.
-2. **CLO2 — Generate:** Generate random numbers and random variates from specified probability distributions using standard computational techniques.
-3. **CLO3 — Implement:** Implement Monte Carlo simulation methods and discrete-event models to solve problems in different application domains.
-4. **CLO4 — Analyse:** Analyse simulation inputs and outputs using appropriate statistical techniques to create accurate model representations and draw valid conclusions.
-5. **CLO5 — Construct:** Construct Markov chain models to represent stochastic processes in real-world systems.
-6. **CLO6 — Evaluate:** Evaluate simulation models through systematic validation approaches and appropriate tools for different problem domains.
+1. **CLO1 ** Explain the fundamental concepts and importance of simulation modelling in solving complex problems.
+2. **CLO2 ** Generate random numbers and random variates from specified probability distributions using standard computational techniques.
+3. **CLO3 ** Implement Monte Carlo simulation methods and discrete-event models to solve problems in different application domains.
+4. **CLO4 ** Analyse simulation inputs and outputs using appropriate statistical techniques to create accurate model representations and draw valid conclusions.
+5. **CLO5 ** Construct Markov chain models to represent stochastic processes in real-world systems.
+6. **CLO6 ** Evaluate simulation models through systematic validation approaches and appropriate tools for different problem domains.
 
 ## 6. Learning and Teaching Approach
 
@@ -65,7 +65,7 @@ The course combines:
 - interactive lectures and guided discussion;
 - worked examples and short exercises;
 - experience-based case studies;
-- Python demonstrations and guided notebook work;
+- Python demonstrations ;
 - hands-on lab investigations;
 - scenario comparison and statistical interpretation;
 - group project work; and
