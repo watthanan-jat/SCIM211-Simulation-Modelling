@@ -124,6 +124,13 @@ Seven lab exercises contribute 21% of the final grade.
 
 Four quizzes will be held during lecture sessions in **Weeks 5, 7, 13, and 17**.
 
+| Quiz | Week | Date |
+|---:|---:|---|
+| Quiz 1 | Week 5 | Tue 1 Sep |
+| Quiz 2 | Week 7 | Tue 15 Sep |
+| Quiz 3 | Week 13 | Tue 27 Oct |
+| Quiz 4 | Week 17 | Tue 24 Nov |
+
 - Only the best two quiz scores count toward the final grade
 - The two counted quizzes contribute 20% in total.
 - There are no replacement quizzes under any circumstances.

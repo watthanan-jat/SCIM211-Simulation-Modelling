@@ -41,6 +41,15 @@ Teaching begins on **Tuesday 4 August 2026**. There is no regular class during *
 | 17 | Tue 24 Nov | Course review; **Quiz 4** |
 | — | To be announced | Final examination |
 
+## Quiz Schedule
+
+| Quiz | Week | Date |
+|---:|---:|---|
+| Quiz 1 | Week 5 | Tue 1 Sep |
+| Quiz 2 | Week 7 | Tue 15 Sep |
+| Quiz 3 | Week 13 | Tue 27 Oct |
+| Quiz 4 | Week 17 | Tue 24 Nov |
+
 ## Lab and Project Pathway
 
 The seven assessed labs develop one continuing Coffee Shop Simulation Project:
