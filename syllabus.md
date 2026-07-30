@@ -1,6 +1,6 @@
 # SCIM211 Simulation Modelling
 
-## Course Syllabus — Semester 1, Academic Year 2026
+## Course Syllabus: Semester 1, Academic Year 2026
 
 
 ## 1. Course Information
