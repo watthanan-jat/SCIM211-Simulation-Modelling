@@ -27,7 +27,7 @@ The official credit structure is 3 hours of theory and 6 hours of self-study per
 **Asst. Prof. Dr. Watthanan Jatuviriyapornchai (WJ)**<br>
 B203/8 Department of Mathematics, Faculty of Science<br>
 Telephone: 02-201-5356<br>
-Email: [watthanan.jat@mahidool.ac.th](mailto:watthanan.jat@mahidool.ac.th)
+Email: [watthanan.jat@mahidool.ac.th](mailto:watthanan.jat@mahidol.ac.th)
 
 The instructor is both the course coordinator and course-responsible instructor. 
 Lab assistants will support designated lab and project sessions.
@@ -229,7 +229,6 @@ Faculty of Science, Mahidol University<br>
 3rd Floor, MUSES Building<br>
 272 Rama VI Road, Ratchathewi District<br>
 Bangkok 10400, Thailand<br>
-Email: [scedmu.133@gmail.com](mailto:scedmu.133@gmail.com)
 
 ## 13. Course Evaluation and Improvement
 
