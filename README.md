@@ -4,10 +4,9 @@ Welcome to **SCIM211 Simulation Modelling**.
 
 This repository is your home base for the course. You will find the weekly schedule, lab sheets, starter notebooks, report templates, data files, and Python code stubs here.
 
-The course is built around one continuing project: the **Coffee Shop Simulation Project**. We start with a simple real-world question, such as "How long do customers wait?", then gradually add randomness, queues, decisions, data analysis, and recommendations.
+The lab for this course is built around one continuing project: the **Coffee Shop Simulation Project**. We start with a simple real-world question, such as "How long do customers wait?", then gradually add randomness, queues, decisions, data analysis, and recommendations.
 
 ## What This Course Is About
-
 Simulation is a way to study systems that are difficult to solve exactly. Instead of only writing formulas, we build a model, run experiments, and use the results to understand what might happen.
 
 In this course, you will practise how to:
@@ -25,7 +24,6 @@ You do not need to be a perfect programmer before starting. The labs are designe
 | Item | Details |
 |---|---|
 | Course | SCIM211 Simulation Modelling |
-| Audience | Second-year Industrial Mathematics and Data Science |
 | Duration | 15 weeks |
 | Theory class | 2 hours every week |
 | Lab class | 2 hours every even week |
@@ -51,7 +49,6 @@ For lab work, go to the relevant folder in [`labs/`](labs/).
 Throughout the semester, we will use a coffee shop as our main example. This gives us one familiar system that can grow with the course.
 
 You will model questions such as:
-
 - When do customers arrive?
 - How long does each drink take to prepare?
 - How long do customers wait?
@@ -120,8 +117,6 @@ The notebooks are intentionally not full solutions. They are there to guide your
 
 | Folder | What It Contains |
 |---|---|
-| `lectures/` | Lecture materials |
-| `exercises/` | Practice questions and short activities |
 | `labs/` | Released lab sheets, starter notebooks, and report templates |
 | `data/` | Data files used in labs and validation |
 | `src/` | Python function stubs for future implementation |
