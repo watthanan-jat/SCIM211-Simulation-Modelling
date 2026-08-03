@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Interactive browser simulations for SCIM211 Simulation Modelling.">
+    <title>SCIM211 Simulation Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#playground">Skip to simulations</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="course-link" href="../">SCIM211 Simulation Modelling</a>
+        <p class="eyebrow">Learn by experimenting</p>
+        <h1>Simulation Playground</h1>
+        <p class="header-copy">Change the inputs, run the models, and explain the variation you observe.</p>
+      </div>
+    </header>
+
+    <main id="playground" class="page-shell">
+      <div class="tabs" role="tablist" aria-label="Choose a simulation">
+        <button
+          id="pi-tab"
+          class="tab-button is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="pi-panel"
+          tabindex="0"
+        >
+          <span class="tab-number">01</span>
+          Monte Carlo Pi
+        </button>
+        <button
+          id="sir-tab"
+          class="tab-button"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="sir-panel"
+          tabindex="-1"
+        >
+          <span class="tab-number">02</span>
+          Particle Epidemic
+        </button>
+      </div>
+
+      <section id="pi-panel" class="simulation-panel" role="tabpanel" aria-labelledby="pi-tab">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Static stochastic simulation</p>
+            <h2>Monte Carlo Estimation of Pi</h2>
+          </div>
+          <p>Drop random points into a square and estimate the circle-to-square area ratio.</p>
+        </div>
+
+        <div class="workspace-grid">
+          <article class="card visual-card">
+            <div class="card-heading">
+              <div>
+                <h3>Random point field</h3>
+                <p>Green points fall inside the circle; coral points fall outside.</p>
+              </div>
+              <div class="legend" aria-label="Point legend">
+                <span><i class="legend-dot inside-dot"></i>Inside</span>
+                <span><i class="legend-dot outside-dot"></i>Outside</span>
+              </div>
+            </div>
+            <div class="canvas-frame square-frame">
+              <canvas id="pi-canvas" width="720" height="720" role="img" aria-label="A square with an inscribed circle and random points"></canvas>
+            </div>
+          </article>
+
+          <aside class="card control-card" aria-label="Monte Carlo controls">
+            <h3>Controls</h3>
+            <div class="button-grid drop-grid">
+              <button type="button" class="button primary pi-drop" data-count="1" title="Generate one random point">Drop 1 point</button>
+              <button type="button" class="button primary pi-drop" data-count="10" title="Generate ten random points">Drop 10 points</button>
+              <button type="button" class="button primary pi-drop" data-count="100" title="Generate one hundred random points">Drop 100 points</button>
+              <button type="button" class="button primary pi-drop" data-count="1000" title="Generate one thousand random points">Drop 1,000 points</button>
+            </div>
+
+            <div class="button-row">
+              <button id="pi-run" type="button" class="button accent" title="Continuously generate points">Auto-run</button>
+              <button id="pi-pause" type="button" class="button quiet" title="Pause automatic point generation" disabled>Pause</button>
+              <button id="pi-reset" type="button" class="button danger" title="Clear all points and restart with the current seed">Reset</button>
+            </div>
+
+            <label class="field-label" for="pi-speed">
+              Simulation speed
+              <output id="pi-speed-output" for="pi-speed">250 points/tick</output>
+            </label>
+            <input id="pi-speed" type="range" min="1" max="5" step="1" value="3" title="Choose how many points are generated during each automatic update">
+
+            <label class="field-label" for="pi-seed">
+              Random seed
+              <span class="help" title="Use the same seed to reproduce the same sequence of points" aria-label="The seed makes a run reproducible">?</span>
+            </label>
+            <div class="seed-row">
+              <input id="pi-seed" type="text" inputmode="numeric" maxlength="12" value="2112026" aria-describedby="pi-seed-note">
+              <button id="pi-new-seed" type="button" class="button quiet compact" title="Generate a new random seed">New seed</button>
+            </div>
+            <p id="pi-seed-note" class="field-note">Reset after changing the seed to begin a reproducible run.</p>
+
+            <div class="export-row">
+              <button id="pi-download" type="button" class="button outline" title="Download the estimate history as a CSV file">Download CSV</button>
+              <button id="pi-copy" type="button" class="button outline" title="Copy the current parameters and result">Copy summary</button>
+            </div>
+            <p id="pi-copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
+
+        <div class="results-grid">
+          <article class="card stats-card">
+            <div class="card-heading">
+              <div>
+                <h3>Live results</h3>
+                <p aria-hidden="true">pi_hat = 4H/N</p>
+              </div>
+            </div>
+            <div class="stat-grid" aria-live="polite">
+              <div class="stat"><span>Total points, N</span><strong id="pi-total">0</strong></div>
+              <div class="stat"><span>Inside circle, H</span><strong id="pi-inside">0</strong></div>
+              <div class="stat highlight"><span>Estimate, pi_hat</span><strong id="pi-estimate">Not yet available</strong></div>
+              <div class="stat"><span>Absolute error</span><strong id="pi-error">Not yet available</strong></div>
+            </div>
+          </article>
+
+          <article class="card graph-card">
+            <div class="card-heading">
+              <div>
+                <h3>Estimate against sample size</h3>
+                <p>The dashed line is the true value of pi.</p>
+              </div>
+            </div>
+            <div class="canvas-frame graph-frame">
+              <canvas id="pi-graph" width="900" height="380" role="img" aria-label="Line graph of the estimate of pi against the number of points"></canvas>
+            </div>
+          </article>
+        </div>
+
+        <div class="learning-grid">
+          <article class="observe-box">
+            <p class="eyebrow">What should I observe?</p>
+            <h3>Variation shrinks, but not in a straight line</h3>
+            <p>The estimate usually settles nearer to pi as N grows, but it can move away temporarily. Convergence is a long-run tendency, not a guarantee of improvement at every step.</p>
+          </article>
+
+          <article class="challenge-box">
+            <p class="eyebrow">Student challenge</p>
+            <ol>
+              <li>Record the estimate at N = 10, 100, 1,000, and 10,000.</li>
+              <li>Observe whether the estimate improves monotonically.</li>
+              <li>Explain why different runs produce different estimates.</li>
+              <li>Classify the model as static or dynamic and deterministic or stochastic.</li>
+            </ol>
+          </article>
+        </div>
+
+        <details class="assumptions card">
+          <summary>Model assumptions</summary>
+          <ul>
+            <li>Each point is sampled independently and uniformly from the square.</li>
+            <li>The circle has radius 1 and the square covers [-1, 1] by [-1, 1].</li>
+            <li>A point on the circle boundary is counted as inside.</li>
+            <li>The pseudo-random number generator and seed determine the sample path.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="sir-panel" class="simulation-panel" role="tabpanel" aria-labelledby="sir-tab" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Dynamic stochastic simulation</p>
+            <h2>Interacting-Particle Epidemic Simulation</h2>
+          </div>
+          <p>Watch infection spread through local interactions on a ring using synchronous time steps.</p>
+        </div>
+
+        <div class="workspace-grid">
+          <article class="card visual-card">
+            <div class="card-heading">
+              <div>
+                <h3>SIR particle ring</h3>
+                <p>Each particle interacts only with its left and right neighbours.</p>
+              </div>
+              <div class="legend" aria-label="Particle-state legend">
+                <span><i class="legend-dot susceptible-dot"></i>S</span>
+                <span><i class="legend-dot infected-dot"></i>I</span>
+                <span><i class="legend-dot recovered-dot"></i>R</span>
+              </div>
+            </div>
+            <div class="canvas-frame ring-frame">
+              <canvas id="sir-canvas" width="840" height="650" role="img" aria-label="Susceptible, infected, and recovered particles arranged on a ring"></canvas>
+            </div>
+          </article>
+
+          <aside class="card control-card" aria-label="Epidemic controls">
+            <h3>Controls</h3>
+            <label class="field-label" for="sir-n">Number of particles <output id="sir-n-output" for="sir-n">40</output></label>
+            <input id="sir-n" type="range" min="10" max="80" step="1" value="40" title="Set the population size on the ring">
+
+            <label class="field-label" for="sir-initial">Initially infected <output id="sir-initial-output" for="sir-initial">2</output></label>
+            <input id="sir-initial" type="range" min="1" max="20" step="1" value="2" title="Set the number infected at time zero">
+
+            <label class="field-label" for="sir-p">Infection probability, p <output id="sir-p-output" for="sir-p">0.30</output></label>
+            <input id="sir-p" type="range" min="0" max="1" step="0.01" value="0.30" title="Probability that one infected neighbour transmits during one step">
+
+            <label class="field-label" for="sir-q">Recovery probability, q <output id="sir-q-output" for="sir-q">0.10</output></label>
+            <input id="sir-q" type="range" min="0" max="1" step="0.01" value="0.10" title="Probability that an infected particle recovers during one step">
+
+            <label class="field-label" for="sir-speed">Simulation speed <output id="sir-speed-output" for="sir-speed">2 steps/s</output></label>
+            <input id="sir-speed" type="range" min="1" max="10" step="1" value="2" title="Choose the number of epidemic steps per second">
+
+            <label class="field-label" for="sir-seed">
+              Random seed
+              <span class="help" title="Use the same seed and parameters to reproduce a sample path" aria-label="The seed makes a run reproducible">?</span>
+            </label>
+            <div class="seed-row">
+              <input id="sir-seed" type="text" inputmode="numeric" maxlength="12" value="2112026" aria-describedby="sir-seed-note">
+              <button id="sir-new-seed" type="button" class="button quiet compact" title="Generate a new random seed">New seed</button>
+            </div>
+            <p id="sir-seed-note" class="field-note">Reset after changing any parameter to start that experiment.</p>
+
+            <div class="button-row">
+              <button id="sir-step" type="button" class="button primary" title="Advance the model by one synchronous time step">One step</button>
+              <button id="sir-run" type="button" class="button accent" title="Run the epidemic automatically">Run</button>
+              <button id="sir-pause" type="button" class="button quiet" title="Pause automatic time steps" disabled>Pause</button>
+              <button id="sir-reset" type="button" class="button danger" title="Return to time zero using the current parameters and seed">Reset</button>
+            </div>
+
+            <div class="export-row">
+              <button id="sir-download" type="button" class="button outline" title="Download S, I, and R through time as a CSV file">Download CSV</button>
+              <button id="sir-copy" type="button" class="button outline" title="Copy the parameters, seed, and current outcomes">Copy summary</button>
+            </div>
+            <p id="sir-copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
+
+        <div class="results-grid">
+          <article class="card stats-card">
+            <div class="card-heading">
+              <div>
+                <h3>Live results</h3>
+                <p id="sir-status">Ready to run</p>
+              </div>
+            </div>
+            <div class="stat-grid sir-stats" aria-live="polite">
+              <div class="stat"><span>Current time, t</span><strong id="sir-time">0</strong></div>
+              <div class="stat susceptible-stat"><span>S(t)</span><strong id="sir-s">0</strong></div>
+              <div class="stat infected-stat"><span>I(t)</span><strong id="sir-i">0</strong></div>
+              <div class="stat recovered-stat"><span>R(t)</span><strong id="sir-r">0</strong></div>
+              <div class="stat highlight"><span>Peak infected</span><strong id="sir-peak">0</strong></div>
+              <div class="stat"><span>Time of peak</span><strong id="sir-peak-time">0</strong></div>
+              <div class="stat wide-stat"><span>Epidemic duration</span><strong id="sir-duration">Not yet ended</strong></div>
+            </div>
+          </article>
+
+          <article class="card graph-card">
+            <div class="card-heading">
+              <div>
+                <h3>SIR sample path</h3>
+                <p>Counts of susceptible, infected, and recovered particles through time.</p>
+              </div>
+            </div>
+            <div class="canvas-frame graph-frame">
+              <canvas id="sir-graph" width="900" height="380" role="img" aria-label="Line graph of susceptible, infected, and recovered particle counts through time"></canvas>
+            </div>
+          </article>
+        </div>
+
+        <div class="learning-grid">
+          <article class="observe-box">
+            <p class="eyebrow">What should I observe?</p>
+            <h3>Local contact creates varied epidemic paths</h3>
+            <p>Infection can disappear quickly, spread around the ring, or stall behind recovered particles. The same inputs can produce different peaks and durations because every transition is probabilistic.</p>
+          </article>
+
+          <article class="challenge-box">
+            <p class="eyebrow">Student challenge</p>
+            <ol>
+              <li>Run the same parameter values three times.</li>
+              <li>Compare the sample paths, peak infection, and epidemic duration.</li>
+              <li>Reduce p while holding q fixed.</li>
+              <li>Increase q while holding p fixed.</li>
+              <li>Explain why identical parameters can produce different outcomes.</li>
+              <li>Classify the model as dynamic or static, deterministic or stochastic, and discrete or continuous.</li>
+            </ol>
+          </article>
+        </div>
+
+        <details class="assumptions card">
+          <summary>Model assumptions</summary>
+          <ul>
+            <li>The population is closed and arranged on a ring.</li>
+            <li>Each particle interacts only with its two nearest neighbours.</li>
+            <li>All state changes are calculated from time t and applied together at time t + 1.</li>
+            <li>If a susceptible particle has k infected neighbours, its infection probability is 1 - (1 - p)<sup>k</sup>.</li>
+            <li>An infected particle recovers with probability q; recovery is permanent.</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>SCIM211 Simulation Modelling · Browser-only learning playground</p>
+    </footer>
+  </body>
+</html>
