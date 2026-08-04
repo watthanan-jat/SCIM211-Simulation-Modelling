@@ -546,6 +546,26 @@ p {
   text-decoration: none;
 }
 
+.playground-entry {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.playground-button {
+  background: var(--warm);
+  box-shadow: 0 12px 28px rgba(43, 36, 24, 0.16);
+  color: #2b2418;
+  font-size: 1.1rem;
+  justify-content: center;
+  min-width: min(100%, 320px);
+  padding: 16px 24px;
+}
+
+.playground-button:hover {
+  transform: translateY(-2px);
+}
+
 footer {
   border-top: 1px solid var(--line);
   margin: 20px auto 0;
