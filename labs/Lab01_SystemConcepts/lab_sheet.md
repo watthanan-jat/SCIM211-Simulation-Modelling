@@ -9,12 +9,28 @@ Before you simulate, make sure you can answer:
 4. Which simulation worldview should we use?
 5. How do we represent the model in Python?
 
+## How to Use This Lab
+
+Use the notebook for both code and written answers. This sheet provides supporting instructions and explanations.
+
+Do not try to make the code perfect on the first attempt. The purpose is to see how queue logic works, make small mistakes, diagnose them, and then connect the Python calculation back to the system description.
+
+Recommended workflow:
+
+1. Read the short explanation before each task.
+2. Predict what should happen before running code.
+3. Run the code or complete the TODO.
+4. Compare the result with your prediction.
+5. If the result is different, write down what changed and why.
+
+Keep notes on failed attempts. In simulation modelling, a wrong first result is often useful because it reveals which part of the system logic was misunderstood.
+
 ## Part 0: Setup
 
 Open:
 
 ```text
-notebooks/Lab01_SystemConcepts.ipynb
+labs/Lab01_SystemConcepts/starter.ipynb
 ```
 
 Run:
@@ -254,10 +270,64 @@ customer, arrival, service, start, end, wait
 Expected columns:
 
 ```python
-df["start"]
-df["end"]
-df["wait"]
+manual_df["start"]
+manual_df["end"]
+manual_df["wait"]
 ```
+
+### Trial-and-Error Checks
+
+Before moving to the investigation, test your implementation with these small changes.
+
+Trial 1:
+
+Change the second customer arrival time from 2 to 4.
+
+Prediction:
+
+The second customer should no longer wait because the first service ends at time 4.
+
+Check:
+
+Does your code give waiting time 0 for customer 2?
+
+Trial 2:
+
+Change all service times to 1.
+
+Prediction:
+
+The barista should usually be free before the next customer arrives.
+
+Check:
+
+Are most waiting times equal to 0?
+
+Trial 3:
+
+Change all arrival times to:
+
+```python
+arrival = [1, 1, 1, 1, 1]
+```
+
+Prediction:
+
+Everyone arrives together, so the queue should build immediately.
+
+Check:
+
+Do the start times increase one service after another?
+
+If any trial gives an unexpected result, inspect these three lines:
+
+```python
+start = max(arrival_time, previous_service_end)
+end = start + service_time
+wait = start - arrival_time
+```
+
+The most common mistake is updating `previous_service_end` too early or using the current customer service time before calculating the current start time.
 
 ## Part F: Investigation
 
@@ -283,12 +353,25 @@ Answer:
 
 ## Checkpoint Submission
 
-Submit:
-1. completed notebook
-2. completed worldview comparison table
-3. original average waiting time
-4. new average waiting time after slow first customer
-5. reflection in `reports/Lab01_Report.md`
+Show the completed notebook to the TA during the lab. After the TA checkpoint, save the notebook as:
+
+```text
+Lab01_StudentID.ipynb
+```
+
+For example, student ID 6812345 should submit `Lab01_6812345.ipynb`.
+
+Upload the completed notebook to the **Lab 01** assignment in Google Classroom before leaving the lab. The notebook must include:
+
+1. completed Python code and output
+2. Python warm-up interpretations
+3. system-component and worldview tables
+4. manual-simulation results
+5. original and slow-first-customer results
+6. 150-200 word reflection
+7. AI use statement
+
+Before uploading, restart the kernel, run all cells from top to bottom, check that there are no errors, and save the notebook.
 
 ## Reflection Questions
 
@@ -297,4 +380,5 @@ Write 150-200 words:
 2. Which worldview is probably best for coding a discrete-event simulation?
 3. What was the most important state variable in today's model?
 4. What assumption in today's model is unrealistic?
-5. Include an AI use statement.
+
+Complete the separate AI Use Statement section in the notebook.
