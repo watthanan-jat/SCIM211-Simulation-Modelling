@@ -243,14 +243,6 @@ Complete:
 | 4 | | | | | |
 | 5 | | | | | |
 
-Hints:
-
-```text
-service_start = max(arrival_time, previous_service_end)
-service_end = service_start + service_time
-waiting_time = service_start - arrival_time
-```
-
 Answer:
 1. Which customer waited longest?
 2. What is the average waiting time?
@@ -274,60 +266,6 @@ manual_df["start"]
 manual_df["end"]
 manual_df["wait"]
 ```
-
-### Trial-and-Error Checks
-
-Before moving to the investigation, test your implementation with these small changes.
-
-Trial 1:
-
-Change the second customer arrival time from 2 to 4.
-
-Prediction:
-
-The second customer should no longer wait because the first service ends at time 4.
-
-Check:
-
-Does your code give waiting time 0 for customer 2?
-
-Trial 2:
-
-Change all service times to 1.
-
-Prediction:
-
-The barista should usually be free before the next customer arrives.
-
-Check:
-
-Are most waiting times equal to 0?
-
-Trial 3:
-
-Change all arrival times to:
-
-```python
-arrival = [1, 1, 1, 1, 1]
-```
-
-Prediction:
-
-Everyone arrives together, so the queue should build immediately.
-
-Check:
-
-Do the start times increase one service after another?
-
-If any trial gives an unexpected result, inspect these three lines:
-
-```python
-start = max(arrival_time, previous_service_end)
-end = start + service_time
-wait = start - arrival_time
-```
-
-The most common mistake is updating `previous_service_end` too early or using the current customer service time before calculating the current start time.
 
 ## Part F: Investigation
 
