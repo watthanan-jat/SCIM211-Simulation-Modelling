@@ -221,6 +221,19 @@ Complete this table:
 | Process interaction | | | | |
 | Activity scanning | | | | |
 
+## Checkpoint 1: First Half (1 of 3 Points)
+
+Target time: approximately 60 minutes into the lab.
+
+Show your notebook to the TA after completing Parts A-C. To receive the first 1 point, your notebook must contain:
+
+1. completed and executed Python warm-up code
+2. written answers for Parts A1-A3
+3. completed coffee-shop system-components table
+4. completed simulation-worldviews comparison table
+
+The TA will record the checkpoint during the lab. You do not need to upload the notebook yet; continue with Parts D-F.
+
 ## Part D: Manual Simulation
 
 Use this table:
@@ -289,9 +302,9 @@ Answer:
 2. What is a bottleneck?
 3. How might a manager reduce this problem?
 
-## Checkpoint Submission
+## Checkpoint 2: Final Submission (Remaining 2 of 3 Points)
 
-Show the completed notebook to the TA during the lab. After the TA checkpoint, save the notebook as:
+Show the completed Parts D-F, reflection, and AI use statement to the TA. After the final checkpoint, save the notebook as:
 
 ```text
 Lab01_StudentID.ipynb
