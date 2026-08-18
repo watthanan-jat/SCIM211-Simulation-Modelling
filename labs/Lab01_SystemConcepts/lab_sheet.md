@@ -302,9 +302,33 @@ Answer:
 2. What is a bottleneck?
 3. How might a manager reduce this problem?
 
-## Checkpoint 2: Final Submission (Remaining 2 of 3 Points)
+## Part G: Hand-drawn event-handling flowchart
 
-Show the completed Parts D-F, reflection, and AI use statement to the TA. After the final checkpoint, save the notebook as:
+In computer science, a diagram that shows algorithm steps, decisions, and control flow is called a **flowchart**.
+
+On paper, draw an event-handling flowchart showing how the single-server coffee-shop system handles:
+
+1. a customer arrival
+2. a customer departure
+3. the decision "Is the server idle?"
+4. the decision "Is the queue empty?"
+5. the possible actions: start service, join the queue, begin service for the next customer, or make the server idle
+
+Use rectangles for actions, diamonds for decisions, and labelled arrows to show the direction of control. Show the completed flowchart to the TA at Checkpoint 2. The paper flowchart does not need to be uploaded to Google Classroom.
+
+## Reflection Questions
+
+Write 150-200 words:
+1. Which simulation worldview feels most natural to you and why?
+2. Which worldview is probably best for coding a discrete-event simulation?
+3. What was the most important state variable in today's model?
+4. What assumption in today's model is unrealistic?
+
+Complete the separate AI Use Statement section in the notebook.
+
+## Checkpoint 2: Final Submission
+
+Show the completed Parts D-G, reflection, and AI use statement to the TA. After the final checkpoint, save the notebook as:
 
 ```text
 Lab01_StudentID.ipynb
@@ -323,13 +347,3 @@ Upload the completed notebook to the **Lab 01** assignment in Google Classroom b
 7. AI use statement
 
 Before uploading, restart the kernel, run all cells from top to bottom, check that there are no errors, and save the notebook.
-
-## Reflection Questions
-
-Write 150-200 words:
-1. Which simulation worldview feels most natural to you and why?
-2. Which worldview is probably best for coding a discrete-event simulation?
-3. What was the most important state variable in today's model?
-4. What assumption in today's model is unrealistic?
-
-Complete the separate AI Use Statement section in the notebook.
