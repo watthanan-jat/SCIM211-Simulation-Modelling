@@ -134,7 +134,7 @@ Show the completed Parts D-E and AI-use statement to the TA. Be prepared to expl
 Lab02_StudentID.ipynb
 ```
 
-For example, student ID 6812345 should submit `Lab02_6812345.ipynb`.
+For example, student ID 6812345 should submit `Lab02_6900789.ipynb`.
 
 Upload the completed notebook to the **Lab 02** assignment in Google Classroom before leaving the lab. The notebook must include:
 
