@@ -52,7 +52,7 @@ Complete:
 | B | |
 | C | |
 
-Questions:
+Think about the following questions. You do not need to write answers, but the TA may ask you to explain your reasoning:
 
 1. Which generator has the longest period?
 2. Why is a short period dangerous in a long simulation?
@@ -66,11 +66,24 @@ Create:
 1. a histogram of the `U` values; and
 2. a scatter plot of `(U_i, U_(i+1))`.
 
-Questions:
+Think about the following questions. You do not need to write answers, but the TA may ask you to explain your reasoning:
 
 1. Does the histogram cover the interval reasonably?
 2. Does the scatter plot contain repeated points or visible structure?
 3. What does the scatter plot reveal that the histogram can hide?
+
+## Checkpoint 1: First Half (1 of 3 Points)
+
+Target time: approximately 60 minutes into the lab.
+
+Show your notebook to the TA after completing Parts A-C. To receive the first 1 point, your notebook must contain:
+
+1. a completed and executed LCG function;
+2. the first 10 values from Generators A, B, and C, with confirmation that all `U` values lie in `[0, 1)`;
+3. the completed period table; and
+4. Generator B's histogram and successive-value scatter plot.
+
+The TA may ask you to explain your reasoning about the period, histogram, or scatter plot. The TA will record the checkpoint during the lab. You do not need to upload the notebook yet; continue with Parts D-E.
 
 ## Part D: Compare Generator B with NumPy
 
@@ -91,45 +104,45 @@ Complete:
 | NumPy | | | | | |
 | Generator B | | | | | |
 
-Questions:
+Think about the following questions. You do not need to write answers, but the TA may ask you to explain your reasoning:
 
 1. Which source would you trust for a real simulation?
 2. Why can two sources have similar means but very different quality?
 
-## Part E: Speed and Scale
+## Part E: Interpretation, Seeds, and Reproducibility
 
-Generate 100,000 NumPy values in two ways:
+Repeat the seed experiment from the instructor demo:
 
-1. one value at a time in a Python loop; and
-2. all values at once with `rng.random(100000)`.
+1. create a NumPy generator with seed `211` and record its first five values;
+2. create a new NumPy generator with seed `211` and record its first five values; and
+3. create a new NumPy generator with seed `212` and record its first five values.
 
-Use the same seed before each method. Record the approximate times.
+Think about the following questions. You do not need to write answers, but the TA may ask you to explain your reasoning:
 
-| Method | Values | Approximate time |
-|---|---:|---:|
-| Python loop | 100000 | |
-| NumPy vectorised | 100000 | |
-
-Question: why is vectorised generation useful when a simulation has many replications?
-
-## Part F: Interpretation and Checkpoint
-
-Write 4-6 sentences explaining:
-
-1. why a short period is risky;
-2. why a histogram alone is insufficient;
-3. which source you would use and why; and
-4. what the speed comparison showed.
+1. Are the two sequences generated with seed `211` identical? Why?
+2. How does the sequence generated with seed `212` differ?
+3. Does setting a seed make the simulation model deterministic? Explain the difference between a stochastic model and a reproducible sample path.
+4. Why should the seed be recorded in a simulation report?
 
 Include an AI-use statement.
 
-## Submission
+## Checkpoint 2: Final Submission
 
-Submit one completed notebook containing:
+Show the completed Parts D-E and AI-use statement to the TA. Be prepared to explain what the seed experiment demonstrates about reproducibility. After the final checkpoint, save the notebook as:
 
-1. the LCG function;
+```text
+Lab02_StudentID.ipynb
+```
+
+For example, student ID 6812345 should submit `Lab02_6812345.ipynb`.
+
+Upload the completed notebook to the **Lab 02** assignment in Google Classroom before leaving the lab. The notebook must include:
+
+1. completed and executed Python code;
 2. the period table;
-3. Generator B histogram and scatter plot;
-4. the NumPy-versus-B comparison table;
-5. the speed results; and
-6. the short interpretation and AI-use statement.
+3. Generator B's histogram and scatter plot;
+4. the NumPy-versus-B comparison table and plots;
+5. the completed seed experiment; and
+6. the AI-use statement.
+
+Before uploading, restart the kernel, run all cells from top to bottom, check that there are no errors, and save the notebook.
