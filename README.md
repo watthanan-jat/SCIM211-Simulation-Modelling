@@ -44,6 +44,15 @@ If this is your first time opening the repository, start with these pages:
 
 For lab work, go to the relevant folder in [`labs/`](labs/).
 
+## Publishing Lab Materials
+
+Keep unfinished and instructor-only materials out of the public repository:
+
+- Never push `labSoln/` or `future_labs/` to GitHub.
+- When a lab is ready to release, move or copy the approved student-facing files from `future_labs/` into the matching folder under `labs/` first.
+- Publish only `starter.ipynb` and `lab_sheet.md` for each released lab.
+- Do not publish solution notebooks, demo notebooks, instructor guides, report templates, checkpoints, or other development files.
+
 ## Coffee Shop Simulation Project
 
 Throughout the semester, we will use a coffee shop as our main example. This gives us one familiar system that can grow with the course.
@@ -101,15 +110,13 @@ Each lab folder contains:
 
 - `lab_sheet.md`: what to do during the lab
 - `starter.ipynb`: a Jupyter notebook with TODO cells
-- `report_template.md`: a short report structure for your answers
 
 Recommended workflow:
 
 1. Read the lab sheet first.
 2. Open the starter notebook.
 3. Complete the TODO cells during the lab.
-4. Use the report template to explain your results.
-5. Add your AI use statement before submitting.
+4. Add your AI use statement before submitting.
 
 The notebooks are intentionally not full solutions. They are there to guide your work while still leaving the modelling and coding decisions to you.
 
@@ -117,7 +124,7 @@ The notebooks are intentionally not full solutions. They are there to guide your
 
 | Folder | What It Contains |
 |---|---|
-| `labs/` | Released lab sheets, starter notebooks, and report templates |
+| `labs/` | Released lab sheets and starter notebooks |
 | `data/` | Data files used in labs and validation |
 | `src/` | Python function stubs for future implementation |
 | `tests/` | Placeholder tests for source-code functions |
