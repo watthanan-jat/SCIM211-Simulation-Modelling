@@ -208,6 +208,36 @@ p {
   margin-bottom: 0;
 }
 
+.lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.lab-link {
+  background: var(--accent);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 9px 13px;
+  text-decoration: none;
+}
+
+.lab-link:hover {
+  background: #0b6658;
+}
+
+.lab-link.demo-link {
+  background: var(--warm);
+  color: #2b2418;
+}
+
+.lab-link.demo-link:hover {
+  background: #e2b86b;
+}
+
 .split {
   align-items: start;
   border-top: 1px solid var(--line);
