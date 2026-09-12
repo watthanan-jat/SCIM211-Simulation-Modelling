@@ -238,6 +238,11 @@ p {
   background: #e2b86b;
 }
 
+.artifact-entry {
+  padding-top: 20px;
+  text-align: center;
+}
+
 .split {
   align-items: start;
   border-top: 1px solid var(--line);
