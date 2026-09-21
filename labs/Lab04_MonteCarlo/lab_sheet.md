@@ -1,4 +1,4 @@
-# Lab 4 · Week 8 — Should We Run the Promotion?
+# Lab 4: Should We Run the Promotion?
 
 Use Monte Carlo experiments to compare expected profit, loss risk, and uncertainty before recommending whether the café should run a matcha promotion.
 
