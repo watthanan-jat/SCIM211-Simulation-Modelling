@@ -9,13 +9,13 @@ Open `starter.ipynb`. The notebook is both your workspace and your report: it ca
 
 ## Part A: How Much Can You Trust One Simulated Number?
 
-By the end of today you hand the manager a single number. First find out how much such a number moves when the same experiment is run again. You cannot learn that from the café model, because nobody knows its true answer — so practise on the integral of x² from 0 to 1, whose exact value is 1/3.
+By the end of today you hand the manager a single number. First find out how much such a number moves when the same experiment is run again. You cannot learn that from the café model, because nobody knows its true answer, so practise on the integral of x² from 0 to 1, whose exact value is 1/3.
 
-**A1 — one growing experiment.** Use a continuing generator seeded 211 to estimate the integral at n = 10, 100, 1,000 and 10,000, then plot it. With more draws the average tends to settle near 1/3, but the error need not fall at every step. Nothing to write up.
+**A1: one growing experiment.** Use a continuing generator seeded 211 to estimate the integral at n = 10, 100, 1,000 and 10,000, then plot it. With more draws the average tends to settle near 1/3, but the error need not fall at every step. Nothing to write up.
 
-**A2 — repeat the whole experiment.** Make 200 estimates at n = 100 and 200 more at n = 400. The Central Limit Theorem predicts their spread exactly: sigma_h = sqrt(4/45) = 0.29814, so the SDs should be about **0.02981** and **0.01491**. *Write two or three sentences* comparing what you observed with the prediction, and saying by what factor the SD changed against the factor predicted.
+**A2: repeat the whole experiment.** Make 200 estimates at n = 100 and 200 more at n = 400. The Central Limit Theorem predicts their spread exactly: sigma_h = sqrt(4/45) = 0.29814, so the SDs should be about **0.02981** and **0.01491**. *Write two or three sentences* comparing what you observed with the prediction, and saying by what factor the SD changed against the factor predicted.
 
-**A3 — one coverage check.** A 95% interval is estimate ± 1.96 × SE, using the sample SD because sigma_h is unknown in real problems. Count how many of the 200 intervals at n = 100 contain 1/3. *Write one or two sentences* giving the coverage and saying which is random — the interval, or the value 1/3.
+**A3: one coverage check.** A 95% interval is estimate ± 1.96 × SE, using the sample SD because sigma_h is unknown in real problems. Count how many of the 200 intervals at n = 100 contain 1/3. *Write one or two sentences* giving the coverage and saying which is random — the interval, or the value 1/3.
 
 ## Part B: Define the Decision
 
