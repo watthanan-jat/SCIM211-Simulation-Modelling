@@ -6,21 +6,6 @@ Use Monte Carlo experiments to compare expected profit, loss risk, and uncertain
 
 Open `starter.ipynb`. The notebook is both your workspace and your report: it carries the explanation, the code TODOs, and **six short written responses**. Complete them, then submit one copy. The daily-profit model is provided and must not be edited.
 
-Several questions in the notebook are marked *think about* or *be ready to say aloud*. These are not written up — the TA asks them at the checkpoints.
-
-Aim to reach Checkpoint 1 at about **minute 65** and Checkpoint 2 at about **minute 105**, leaving the last ten minutes for restart-and-run-all and upload.
-
-| Section | Active time | Main result | Written response |
-|---|---:|---|:--:|
-| A1: the integral at four sample sizes | 10 min | The average settles near 1/3 | — |
-| A2: 200 repeated estimates | 8 min | Spread matches sigma_h / sqrt(n) | 1 |
-| A3: coverage of 200 intervals | 7 min | About 95% contain the true value | 1 |
-| B: define the decision | 5 min | Bad day defined before simulating | 1 |
-| C: read the model, controlled cost check | 10 min | Only the cost changed | 1 |
-| D: 1,000 days per case | 12 min | Profit summary for both cases | — |
-| E: bad-day risk | 4 min | Probability of a loss | — |
-| F: interval, café check, stability | 14 min | CI, two histograms, 1/sqrt(n) rate | 2 |
-| G: recommendation and AI statement | 13 min | Evidence-based decision | 2 |
 
 ## Part A: How Much Can You Trust One Simulated Number?
 
