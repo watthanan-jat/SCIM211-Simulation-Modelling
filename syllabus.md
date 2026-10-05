@@ -138,11 +138,13 @@ Four quizzes will be held during lecture sessions in **Weeks 5, 7, 13, and 17**.
 
 ### 7.4 Group Mini Project and Project Challenge
 
-The Mini Project is worth 9% and is completed in groups.
+The Mini Project is worth 9% and is completed in groups of three.
 
 Throughout the semester, each group will build a reusable coffee-shop simulation model. The model should allow the group to change inputs such as arrival rates, service times, demand, staffing, or operating policies without rewriting the entire program.
 
-In Week 16, each group will receive an assigned **Project Challenge**. The group must apply the model it has built, run appropriate experiments, interpret uncertainty, and support a practical recommendation with evidence. The detailed project outline will be released later in the course.
+Before the challenge, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the published readiness checker. Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
+
+In Week 16, each group will receive an assigned **Project Challenge**. During the two-hour Wednesday hackathon, groups receive one hour to adapt the prepared model and run an appropriate experiment, followed by one hour of short pitches and questions. Each group must interpret uncertainty and support a practical recommendation with evidence. The detailed requirements and checker are provided in the [student handout](docs/mini-project.html).
 
 ## 8. Course Timetable
 
@@ -152,29 +154,30 @@ Regular sessions are scheduled for **10:00–12:00**. Tuesday sessions focus on 
 |---:|---|---|
 | 1 | Tue 4 Aug | Introduction; why simulate; course journey; coffee-shop running example |
 | 2 | Tue 11 Aug | System concepts: entities, resources, attributes, activities, events, and state variables |
-| 2 | Wed 12 Aug | **Lab 1:** From Real System to Simulation Model |
 | 3 | Tue 18 Aug | Probability review: random variables, distributions, expectation, variance, and sampling ideas |
-| 4 | Tue 25 Aug | Random-number generation: pseudo-random numbers, seeds, linear congruential generators, and periods |
+| 3 | Wed 19 Aug, 09:00–11:00 | **Lab 1:** From Real System to Simulation Model (rescheduled from Wed 12 Aug) |
+| 4 | Tue 25 Aug | Random-number generation: pseudo-random numbers and seeds |
 | 4 | Wed 26 Aug | **Lab 2:** Can Computers Really Be Random? |
-| 5 | Tue 1 Sep | Simulating random variables I: inverse transform and discrete random-variable simulation; **Quiz 1** |
-| 6 | Tue 8 Sep | Simulating random variables II: accept–reject ideas, exponential service times, and input generation |
+| 5 | Tue 1 Sep | Multiplicative and linear congruential generators (MCGs and LCGs), and periods; **Quiz 1** |
+| 6 | Tue 8 Sep | Simulating random variables I: inverse transform and discrete random-variable simulation |
 | 6 | Wed 9 Sep | **Lab 3:** From Random Numbers to Random Variables |
-| 7 | Tue 15 Sep | Monte Carlo I: repeated random experiments, expected values, probabilities, and sampling error; **Quiz 2** |
-| 8 | Tue 22 Sep | Monte Carlo II: confidence intervals, integration, decision comparison, and profit simulation |
+| 7 | Tue 15 Sep | Simulating random variables II: accept–reject ideas, exponential service times, and distribution-based input generation; **Quiz 2** |
+| 8 | Tue 22 Sep | **Review** |
 | 8 | Wed 23 Sep | **Lab 4:** Monte Carlo Profit and Promotion Decision |
 | 9 | 28 Sep–2 Oct | **Midterm week:** no regular class |
-| 10 | Tue 6 Oct | Discrete-event simulation I: event scheduling, event lists, queues, arrivals, departures, and server state |
-| 10 | Wed 7 Oct | **Lab 5:** Discrete-Event Simulation of a Coffee Shop Queue |
-| 11 | Tue 13 Oct | Discrete-event simulation II: replications, queue performance, and scenario comparison |
-| 12 | Tue 20 Oct | Markov chains I: states, transition matrices, and one-step and multi-step transitions |
-| 12 | Wed 21 Oct | **Lab 6:** Markov Chains and Customer Loyalty |
+| 10 | Tue 6 Oct | Monte Carlo simulation lecture and Lab 4 demos |
+| 10 | ~~Wed 7 Oct, 10:00–12:00~~ | ~~Lab 5 session~~ Postponed due to the midterm examination |
+| 11 | ~~Tue 13 Oct, 10:00–12:00~~ | ~~Lecture~~ Public holiday |
+| 11 | Wed 14 Oct, 09:00–12:00 | Discrete-event simulation and **Lab 5 demo** |
+| 12 | Tue 20 Oct | Markov chains I: states, transition matrices, and multi-step transitions |
+| 12 | **Wed 21 Oct, 09:00–12:00** | **Lab 6:** Markov Chains and Customer Loyalty |
 | 13 | Tue 27 Oct | Markov chains II: long-run behaviour, stationary distributions, and interpretation; **Quiz 3** |
 | 14 | Tue 3 Nov | Input/output analysis: input data, distribution fitting, replications, and confidence intervals |
 | 14 | Wed 4 Nov | **Lab 7:** Validation and Final Recommendation |
-| 15 | Tue 10 Nov | Variance reduction and validation; project wrap-up |
-| 16 | Tue 17 Nov | Project Challenge briefing and group model application |
-| 16 | Wed 18 Nov | **Project Challenge session:** group work and submission |
-| 17 | Tue 24 Nov | Course review; **Quiz 4** |
+| 15 | Tue 10 Nov | Variance reduction and validation |
+| 16 | Tue 17 Nov | Hackathon briefing, model readiness check, and pitch guidance; assigned challenges remain unseen |
+| 16 | Wed 18 Nov | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge followed by group pitches and questions |
+| 17 | Tue 24 Nov | **Lecture:** Course review; **Quiz 4** |
 | — | To be announced | Final examination |
 
 The timetable may be adjusted when required by the University calendar. Any approved change will be announced through the course communication channel.

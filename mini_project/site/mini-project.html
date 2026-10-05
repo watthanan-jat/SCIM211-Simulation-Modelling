@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Student handout and in-browser readiness checker for the SCIM211 Coffee Shop Simulation Hackathon.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://cdn.jsdelivr.net; worker-src 'self' blob:; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>SCIM211 Coffee Shop Simulation Hackathon</title>
+    <link rel="stylesheet" href="style.css?v=assessment-20260728">
+    <link rel="stylesheet" href="mini-project.css?v=20260919">
+  </head>
+  <body>
+    <header class="project-header" id="top">
+      <nav class="nav" aria-label="Project navigation">
+        <a class="brand" href="index.html">SCIM211</a>
+        <div class="nav-links">
+          <a href="#brief">Brief</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#interface">Interface</a>
+          <a href="#checker">Code Checker</a>
+          <a href="#hackathon">Hackathon</a>
+          <a href="#marking">Marking</a>
+        </div>
+      </nav>
+
+      <section class="project-hero">
+        <p class="eyebrow">Group Mini Project · 9%</p>
+        <h1>Coffee Shop Simulation Hackathon</h1>
+        <p>
+          Build a reusable café simulation in a group of three. Bring a working model to the Week 16 Wednesday lab, adapt it to an unseen operational challenge in one hour, and defend your recommendation in a four-minute pitch.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#checker">Test your code</a>
+          <a class="button secondary" href="mini-project-template.py" download>Download Python template</a>
+          <a class="button secondary" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/mini_project/coffee_shop_hackathon_handout.md">Markdown handout</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="brief" class="section project-section">
+        <div class="section-heading">
+          <p class="eyebrow">Your Mission</p>
+          <h2>Prepare once. Adapt under pressure.</h2>
+          <p>
+            Your model does not need to be the most complicated café in the class. It must be correct, configurable, reproducible, and useful for making a decision. All three group members must understand the code and be ready to explain it.
+          </p>
+        </div>
+
+        <div class="weight-grid" aria-label="Project mark allocation">
+          <article><strong>4</strong><span>Prepared simulation</span></article>
+          <article><strong>3</strong><span>Live challenge</span></article>
+          <article><strong>2</strong><span>Pitch and defence</span></article>
+          <article class="total"><strong>9%</strong><span>Total course mark</span></article>
+        </div>
+
+        <div class="notice important">
+          <strong>Readiness rule</strong>
+          <p>Your final <code>cafe_model.py</code> must show <strong>PASS</strong> in the checker on this page before the hackathon. A file that shows <strong>FAIL</strong> is not a working submission. Passing confirms the required interface and basic consistency; it does not prove that every modelling assumption is correct.</p>
+        </div>
+      </section>
+
+      <section id="requirements" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Minimum Model</p>
+          <h2>What every café simulation must contain</h2>
+        </div>
+        <div class="requirements-grid">
+          <article><span>01</span><h3>Operating period</h3><p>A 120-minute arrival period, with accepted customers allowed to finish after closing.</p></article>
+          <article><span>02</span><h3>Random demand</h3><p>Random arrivals and both simple and complex drink orders.</p></article>
+          <article><span>03</span><h3>Random service</h3><p>Service times that depend on order type and use the supplied seed.</p></article>
+          <article><span>04</span><h3>Resources</h3><p>A configurable number of identical baristas.</p></article>
+          <article><span>05</span><h3>Queue</h3><p>FCFS service initially, with a configurable maximum queue and recorded lost customers.</p></article>
+          <article><span>06</span><h3>Event logic</h3><p>Arrival, service-start, and service-completion logic with a consistent simulation clock.</p></article>
+          <article><span>07</span><h3>Economics</h3><p>Revenue, ingredient cost, scheduled staffing cost, and profit.</p></article>
+          <article><span>08</span><h3>Outputs</h3><p>Customer counts, waiting measures, throughput, utilisation, revenue, cost, and profit.</p></article>
+          <article><span>09</span><h3>Replication</h3><p>One result per supplied seed so uncertainty can be estimated.</p></article>
+          <article><span>10</span><h3>Flexibility</h3><p>Inputs must come from <code>config</code>; do not hard-code the baseline values.</p></article>
+        </div>
+        <p class="scope-note">
+          The unseen challenge may change arrivals, staffing, service times, customer priority, queue admission, the menu, a promotion, an equipment condition, or the closing policy.
+        </p>
+      </section>
+
+      <section id="interface" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Common Contract</p>
+          <h2>Your file must use this interface</h2>
+          <p>The assessed simulation must be a Python file named <code>cafe_model.py</code>. You may develop in a notebook, but the checker will not extract code from a notebook.</p>
+        </div>
+
+        <div class="code-card">
+          <div class="code-card-title">Required function names</div>
+          <pre><code>def simulate_cafe(config, seed):
+    """Return one complete replication as a dictionary."""
+
+def run_replications(config, seeds):
+    """Return one result row per seed as a pandas DataFrame."""</code></pre>
+        </div>
+
+        <p>
+          Do not rename these functions. Do not use <code>input()</code>, require the instructor to edit your file, or automatically open a notebook, plot window, or menu when the file is loaded.
+        </p>
+
+        <details open>
+          <summary>Required configuration entries</summary>
+          <div class="table-wrap">
+            <table class="contract-table">
+              <thead><tr><th>Key</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>run_minutes</code></td><td>Time during which new customers may arrive</td></tr>
+                <tr><td><code>arrival_rate_per_hour</code></td><td>Mean number of arrivals per hour</td></tr>
+                <tr><td><code>n_baristas</code></td><td>Number of identical baristas</td></tr>
+                <tr><td><code>simple_order_probability</code></td><td>Probability of a simple drink order</td></tr>
+                <tr><td><code>mean_service_simple</code></td><td>Mean simple-drink service time in minutes</td></tr>
+                <tr><td><code>mean_service_complex</code></td><td>Mean complex-drink service time in minutes</td></tr>
+                <tr><td><code>price_simple</code>, <code>price_complex</code></td><td>Selling prices in baht</td></tr>
+                <tr><td><code>cost_simple</code>, <code>cost_complex</code></td><td>Ingredient costs in baht</td></tr>
+                <tr><td><code>barista_cost_per_hour</code></td><td>Scheduled staffing cost per barista per hour</td></tr>
+                <tr><td><code>max_queue</code></td><td>Maximum number waiting, or <code>None</code> for no limit</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Baseline configuration supplied for development</summary>
+          <pre class="compact-code"><code>BASE_CONFIG = {
+    "run_minutes": 120.0,
+    "arrival_rate_per_hour": 24.0,
+    "n_baristas": 2,
+    "simple_order_probability": 0.45,
+    "mean_service_simple": 2.0,
+    "mean_service_complex": 4.0,
+    "price_simple": 85.0,
+    "price_complex": 120.0,
+    "cost_simple": 25.0,
+    "cost_complex": 40.0,
+    "barista_cost_per_hour": 120.0,
+    "max_queue": 8,
+}</code></pre>
+        </details>
+
+        <details>
+          <summary>Required result dictionary</summary>
+          <div class="table-wrap">
+            <table class="contract-table">
+              <thead><tr><th>Field</th><th>Required meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>run_minutes</code></td><td>Configured arrival horizon</td></tr>
+                <tr><td><code>finish_time</code></td><td>Later of closing time and last completion</td></tr>
+                <tr><td><code>n_arrivals</code></td><td>Total arrivals</td></tr>
+                <tr><td><code>n_served</code>, <code>n_lost</code></td><td>Customers completed and refused</td></tr>
+                <tr><td><code>n_served_simple</code>, <code>n_served_complex</code></td><td>Completed orders by type</td></tr>
+                <tr><td><code>mean_wait</code>, <code>p90_wait</code>, <code>max_wait</code></td><td>Served-customer waiting times in minutes</td></tr>
+                <tr><td><code>throughput_per_hour</code></td><td><code>n_served / (run_minutes / 60)</code></td></tr>
+                <tr><td><code>utilisation</code></td><td>Busy time divided by <code>n_baristas * finish_time</code></td></tr>
+                <tr><td><code>revenue</code>, <code>total_cost</code>, <code>profit</code></td><td>Financial outputs in baht</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>When nobody is served, waiting-time outputs must be <code>0.0</code>. Counts must satisfy <code>n_arrivals = n_served + n_lost</code> and <code>n_served = n_served_simple + n_served_complex</code>.</p>
+        </details>
+      </section>
+
+      <section id="checker" class="section project-section checker-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Run Before Submission</p>
+          <h2>Test your <code>cafe_model.py</code> here</h2>
+          <p>Upload your file or paste its complete contents below. The code runs locally in your browser and is not uploaded to the course website. The first test requires an internet connection while the Python runtime loads.</p>
+        </div>
+
+        <div class="checker-shell">
+          <div class="checker-toolbar">
+            <label class="file-button" for="code-file">Choose cafe_model.py</label>
+            <input id="code-file" type="file" accept=".py,text/x-python">
+            <button id="load-template" class="tool-button" type="button">Load template</button>
+            <button id="download-code" class="tool-button" type="button">Download editor code</button>
+            <span id="file-name" class="file-name">No file selected</span>
+          </div>
+
+          <label class="editor-label" for="code-editor">Python code</label>
+          <textarea id="code-editor" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editor-help" placeholder="Paste the complete contents of cafe_model.py here."></textarea>
+          <p id="editor-help" class="editor-help">Your draft is saved only in this browser. The official submitted file remains your responsibility.</p>
+
+          <div class="run-row">
+            <button id="run-check" class="run-button" type="button">Run readiness check</button>
+            <button id="stop-check" class="stop-button" type="button" disabled>Stop and reset</button>
+            <div id="runtime-status" class="runtime-status" role="status" aria-live="polite">Checker not loaded</div>
+          </div>
+
+          <section class="result-panel" aria-labelledby="result-title">
+            <div class="result-heading">
+              <h3 id="result-title">Checker report</h3>
+              <span id="result-badge" class="result-badge neutral">Not run</span>
+            </div>
+            <pre id="checker-output" tabindex="0">Add your code, then select “Run readiness check”.</pre>
+          </section>
+        </div>
+
+        <details class="checks-list">
+          <summary>What the checker tests</summary>
+          <ul>
+            <li>The file executes and defines both required functions.</li>
+            <li>The official configuration works without editing the file.</li>
+            <li>Required results are numeric, finite, nonnegative where appropriate, and internally consistent.</li>
+            <li>Customer counts, order counts, revenue, cost, profit, and throughput balance.</li>
+            <li>The same seed reproduces the same result and different seeds produce stochastic variation.</li>
+            <li>Zero demand produces zero arrivals and service outputs.</li>
+            <li>Order-type probabilities and queue limits affect the model.</li>
+            <li>Additional baristas do not increase mean waiting in the stress scenario.</li>
+            <li>The model does not alter the supplied configuration dictionary.</li>
+            <li>The replication function returns one correct row per seed.</li>
+          </ul>
+        </details>
+
+        <div class="notice">
+          <strong>Backup command-line test</strong>
+          <p>If the browser checker is unavailable, run <code>python mini_project/check_cafe_submission.py GROUP_01/cafe_model.py</code> from a local copy of the repository.</p>
+          <p><a class="button project-button" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/raw/refs/heads/main/mini_project/check_cafe_submission.py">Download the command-line readiness checker</a></p>
+        </div>
+      </section>
+
+      <section id="hackathon" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Week 16 Wednesday Lab</p>
+          <h2>Two-hour hackathon format</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <div class="timeline-time">Hour 1</div>
+            <h3>Assigned challenge</h3>
+            <ol>
+              <li>Adapt the prepared simulation.</li>
+              <li>Compare the required policies.</li>
+              <li>Use the instructor-supplied seeds.</li>
+              <li>Run at least 40 replications per policy.</li>
+              <li>Prepare one table, one graph, and a 95% confidence interval.</li>
+              <li>Make a recommendation and identify one limitation.</li>
+            </ol>
+          </article>
+          <article>
+            <div class="timeline-time">Hour 2</div>
+            <h3>Pitch and questions</h3>
+            <p>Each group receives six minutes: four minutes to pitch and two minutes for questions.</p>
+            <ol>
+              <li>Student 1: model and assigned problem.</li>
+              <li>Student 2: experiment and results.</li>
+              <li>Student 3: recommendation and limitation.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section id="marking" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Assessment</p>
+          <h2>Marking guide</h2>
+        </div>
+        <div class="rubric-grid">
+          <article>
+            <h3>Prepared simulation · 4 marks</h3>
+            <ul>
+              <li>Entities, queue, resources, events, and random inputs: 1.5</li>
+              <li>Reusable and configurable implementation: 1.0</li>
+              <li>Replications, seeds, outputs, and uncertainty: 1.0</li>
+              <li>Verification, documentation, and assumptions: 0.5</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Live challenge · 3 marks</h3>
+            <ul>
+              <li>Correct implementation of the assigned change: 1.0</li>
+              <li>Appropriate experiment and uncertainty: 1.0</li>
+              <li>Evidence-based recommendation and limitation: 1.0</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Pitch communication · 1 mark</h3>
+            <ul>
+              <li>Clear four-minute explanation with an effective table or graph: 1.0</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Individual understanding · 1 mark</h3>
+            <ul>
+              <li>Explains their contribution, code, modelling choice, result, and answer independently: 1.0</li>
+            </ul>
+          </article>
+        </div>
+        <div class="notice important">
+          <strong>Readiness-check scoring rule</strong>
+          <p>PASS is compulsory but earns no automatic marks. If the submitted file displays FAIL, the common-interface criterion receives 0. Other criteria are marked only from evidence that genuinely runs and can be explained.</p>
+        </div>
+        <details>
+          <summary>Detailed performance descriptors</summary>
+          <div class="table-wrap">
+            <table class="contract-table rubric-table">
+              <thead>
+                <tr><th>Criterion</th><th>Full achievement</th><th>Partial achievement</th><th>Not demonstrated</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>A1 · 1.5</td><td>Correct arrivals, orders, service, FCFS queue, baristas, queue limit, completions, and accounting.</td><td>Model runs, but an important queue, event, resource, or customer rule is incomplete or incorrect.</td><td>No usable model output or explanation of the event logic.</td></tr>
+                <tr><td>A2 · 1.0</td><td>Checker PASS; required functions work; inputs come from config; scenarios need no rewrite.</td><td>Some hard-coding or manual intervention remains.</td><td>Submitted checker result is FAIL.</td></tr>
+                <tr><td>A3 · 1.0</td><td>Reproducible seeds, replication table, correct outputs, and usable uncertainty estimates.</td><td>Replications work but seeds, output definitions, or uncertainty are incomplete.</td><td>No reproducible simulation output.</td></tr>
+                <tr><td>A4 · 0.5</td><td>Complete notes, units, assumptions, three checks, limitation, and AI statement.</td><td>Documentation is present but one or more elements are weak.</td><td>Required documentation is absent.</td></tr>
+                <tr><td>B1 · 1.0</td><td>Assigned change and every required alternative are implemented correctly.</td><td>An important rule is simplified incorrectly or only some alternatives work.</td><td>No working challenge modification.</td></tr>
+                <tr><td>B2 · 1.0</td><td>Same supplied seeds, at least 40 replications, useful displays, and a correct 95% interval.</td><td>Policies are compared, but design or uncertainty has a material weakness.</td><td>No reproducible comparison.</td></tr>
+                <tr><td>B3 · 1.0</td><td>Evidence-based decision addressing uncertainty, trade-offs, and a consequential limitation.</td><td>Recommendation uses limited evidence or a generic limitation.</td><td>No defensible recommendation.</td></tr>
+                <tr><td>C · 1.0</td><td>Clear, readable, complete four-minute group pitch delivered within time.</td><td>Main idea is understandable but evidence, visual, or timing is weak.</td><td>No pitch.</td></tr>
+                <tr><td>D · 1.0</td><td>Student independently explains contribution, code, choice, result, and answer.</td><td>Student understands the overview but not an important part of the work.</td><td>No participation or demonstrated understanding.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Intermediate performance may receive 0.25 or 0.75 where applicable. The complete analytic rubric is provided with the project materials.</p>
+        </details>
+        <p><a class="button project-button" href="https://github.com/watthanan-jat/SCIM211-Simulation-Modelling/blob/main/mini_project/mini_project_rubric.md">Open the complete analytic rubric</a></p>
+        <p>The project is assessed on modelling quality, reproducibility, experimental reasoning, and explanation—not on which group produces the highest simulated profit.</p>
+      </section>
+
+      <section class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Submission</p>
+          <h2>Files to prepare</h2>
+        </div>
+        <pre class="folder-tree"><code>GROUP_01/
+├── cafe_model.py
+├── model_notes.md
+└── AI_USE.md</code></pre>
+        <p><code>model_notes.md</code> must describe the system, input assumptions, queue operation, output units, at least three verification checks, and one limitation.</p>
+        <p>The course AI Collaboration Level 3 policy applies. In <code>AI_USE.md</code>, identify any AI tool used, how it was used, and how the group checked or revised its output. If no AI tool was used, say so explicitly.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>SCIM211 Simulation Modelling · Coffee Shop Simulation Hackathon</p>
+      <p><a href="index.html">Return to the course homepage</a></p>
+      <p>Updated <time datetime="2026-09-19">19 September 2026</time></p>
+    </footer>
+
+    <script type="module" src="mini-project.js?v=20260919b"></script>
+  </body>
+</html>

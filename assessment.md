@@ -86,9 +86,11 @@ Four quizzes will be held during lecture sessions:
 
 ## Group Mini Project and Project Challenge
 
-The Mini Project is worth 9% and is completed in groups.
+The Mini Project is worth 9% and is completed in groups of three.
 
 Throughout the semester, each group will build a reusable coffee-shop simulation model. The model should support changes to inputs such as arrival rates, service times, demand, staffing, and operating policies without requiring the entire program to be rewritten.
+
+Before the challenge, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the published readiness checker. A file that fails the checker is not operationally ready. Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
 
 In Week 16, each group will receive an assigned **Project Challenge**. The group must:
 
@@ -99,7 +101,7 @@ In Week 16, each group will receive an assigned **Project Challenge**. The group
 5. support a practical recommendation with evidence; and
 6. explain important assumptions and limitations.
 
-The detailed project outline will be released later in the course.
+The Wednesday Project Challenge is a two-hour hackathon: one hour for the assigned model adaptation and experiment, followed by one hour of short group pitches and questions. Requirements, the marking guide, the Python template, and the in-browser checker are provided in the [student handout](docs/mini-project.html).
 
 ## Submission and Communication
 
