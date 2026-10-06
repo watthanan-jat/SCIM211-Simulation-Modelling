@@ -4188,6 +4188,15 @@ button.jp-Dialog-close-button {
   margin-right: auto;
 }
 
+/* Let explanatory markdown tables size columns to their content. */
+.jp-RenderedMarkdown.jp-RenderedHTMLCommon table {
+  table-layout: auto;
+  width: auto;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .jp-RenderedHTMLCommon thead {
   border-bottom: var(--jp-border-width) solid var(--jp-border-color1);
   vertical-align: bottom;
