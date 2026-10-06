@@ -4188,10 +4188,10 @@ button.jp-Dialog-close-button {
   margin-right: auto;
 }
 
-/* Let explanatory markdown tables size columns to their content. */
+/* Keep MathJax formulas from distorting explanatory markdown tables. */
 .jp-RenderedMarkdown.jp-RenderedHTMLCommon table {
-  table-layout: auto;
-  width: auto;
+  table-layout: fixed;
+  width: 100%;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
