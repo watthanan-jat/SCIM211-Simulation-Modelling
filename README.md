@@ -44,7 +44,6 @@ If this is your first time opening the repository, start with these pages:
 | [Syllabus](syllabus.md) | What the course covers and what you should be able to do by the end |
 | [Schedule](schedule.md) | What happens each week |
 | [Assessment](assessment.md) | How course work and project work are handled |
-| [Mini Project](docs/mini-project.html) | Student handout, in-browser code checker, and Week 16 Coffee Shop Simulation Hackathon |
 | [Practice Exercises](exercises/index.md) | Chapter-by-chapter practice questions |
 | [AI Policy](ai_policy.md) | How to use AI tools responsibly in this course |
 
@@ -75,9 +74,7 @@ You will model questions such as:
 
 Each lab adds one new piece to the project. By the end, you should have a clearer sense of how a simulation study is built from data, assumptions, code, output analysis, and judgement.
 
-The semester mini project is the **Coffee Shop Simulation Hackathon**. In a group of three, you will build a reusable simulation model, verify its common interface using the published checker, and respond to an unseen operational scenario during the Week 16 Wednesday lab.
-
-Read the [student handout and run the in-browser code checker](docs/mini-project.html) before the hackathon.
+The semester mini project is the **Coffee Shop Simulation Hackathon**. In a group of three, you will build a reusable simulation model and respond to an operational scenario during the Week 16 Wednesday lab. Project materials and challenge details will be released later.
 
 ## Lab Pathway
 
