@@ -24,11 +24,10 @@ SITE_FILES: dict[str, Path] = {
     "mini-project-template.py": MINI_PROJECT_DIR / "cafe_model_template.py",
     "mini-project-checker.py": MINI_PROJECT_DIR / "check_cafe_submission.py",
     "mini-project-AI_USE_template.md": MINI_PROJECT_DIR / "AI_USE_template.md",
-    "mini-project-instructions.pdf": MINI_PROJECT_DIR / "SCIM211_Cafe_Poisson_Project_Instructions.pdf",
 }
 
 # Files from earlier versions that should no longer be deployed.
-RETIRED_FILES: tuple[str, ...] = ("mini-project-browser-checker.py",)
+RETIRED_FILES: tuple[str, ...] = ("mini-project-browser-checker.py", "mini-project-instructions.pdf")
 
 
 def out_of_date_files() -> list[str]:
