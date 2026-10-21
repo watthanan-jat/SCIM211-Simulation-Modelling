@@ -86,11 +86,11 @@ Four quizzes will be held during lecture sessions:
 
 ## Group Mini Project and Project Challenge
 
-The Mini Project is worth 9% and is completed in groups of three.
+The Mini Project is worth 9% and is completed in groups of three. At the end of the project, each member privately shares 15 points among the three members, including themselves, through a Google Form (5 each for equal work, at most one decimal place). Each member's share of the group marks is weighted according to the points they receive. A total above 15 is deducted from that member's own project mark; a missing submission counts as 5, 5, 5. Details are in the [Mini Project handout](mini_project/coffee_shop_hackathon_handout.md).
 
 Throughout the semester, each group will build a reusable coffee-shop simulation model. The model should support changes to inputs such as arrival rates, service times, demand, staffing, and operating policies without requiring the entire program to be rewritten.
 
-Before the challenge, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the readiness checker, which will be released later. A file that fails the checker is not operationally ready. Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
+Before the challenge, by 17 November 2026 at 23:59, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the [readiness checker](docs/mini-project.html#checker). A file that fails the checker is not operationally ready. Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
 
 In Week 16, each group will receive an assigned **Project Challenge**. The group must:
 
@@ -101,7 +101,7 @@ In Week 16, each group will receive an assigned **Project Challenge**. The group
 5. support a practical recommendation with evidence; and
 6. explain important assumptions and limitations.
 
-The Wednesday Project Challenge is a two-hour hackathon: one hour for the assigned model adaptation and experiment, followed by one hour of short group pitches and questions. The detailed requirements and materials will be released later.
+The Wednesday Project Challenge is a two-hour hackathon: one hour for the assigned model adaptation and experiment, followed by one hour of short group pitches and questions. The first hour is **AI Level 1 (No AI)** and takes place on lab computers without an internet connection; see the AI section below. The detailed requirements are in the [Mini Project handout](mini_project/coffee_shop_hackathon_handout.md).
 
 ## Submission and Communication
 
@@ -140,6 +140,8 @@ Plagiarism of any kind—whether from peers, published sources, past work, or AI
 This course follows **AI Collaboration — Level 3**, as described in MUIC’s *AI in Teaching and Learning: A Practical Guide to Implementing the AI Assessment Scale*.
 
 Students are encouraged to use AI tools as collaborators to support learning, particularly for drafting, idea generation, and feedback. However, all submitted work must demonstrate **critical engagement, meaningful human revision, and independent thinking**.
+
+**Exception:** the first hour of the Week 16 Project Challenge is **AI Level 1 — No AI**. It takes place on lab computers without an internet connection. Students may use their own prepared files, lab notebooks, course lecture notes, and Python's built-in help, but no AI tools, internet, or personal devices. Using AI or the internet during that hour is an academic-integrity violation.
 
 ### Permitted Uses
 

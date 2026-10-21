@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Café Poisson: student handout and in-browser readiness checker for the SCIM211 Coffee Shop Simulation Hackathon.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://cdn.jsdelivr.net; worker-src 'self' blob:; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Café Poisson · SCIM211 Hackathon</title>
+    <link rel="stylesheet" href="style.css?v=assessment-20260728">
+    <link rel="stylesheet" href="mini-project.css?v=20260919">
+  </head>
+  <body>
+    <header class="project-header" id="top">
+      <nav class="nav" aria-label="Project navigation">
+        <a class="brand" href="index.html">SCIM211</a>
+        <div class="nav-links">
+          <a href="#brief">Brief</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#interface">Interface</a>
+          <a href="#checker">Code Checker</a>
+          <a href="#hackathon">Hackathon</a>
+          <a href="#marking">Marking</a>
+        </div>
+      </nav>
+
+      <section class="project-hero">
+        <p class="eyebrow">Group Mini Project · 9%</p>
+        <h1>Café Poisson: Coffee Shop Simulation Hackathon</h1>
+        <p>
+          Café Poisson has just opened next to campus, and the owner needs advice they can trust. In a group of three, build a simulation of the café. On hackathon day the owner sends you one urgent question: you have one hour to adapt your model, and four minutes to pitch your answer.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#checker">Test your code</a>
+          <a class="button secondary" href="mini-project-template.py" download="cafe_model_template.py">Download Python template</a>
+          <a class="button secondary" href="mini-project-instructions.pdf" download="SCIM211_Cafe_Poisson_Project_Instructions.pdf">Project instructions (PDF)</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="brief" class="section project-section">
+        <div class="section-heading">
+          <p class="eyebrow">Your Mission</p>
+          <h2>Build the café in Python. Then answer the owner's question.</h2>
+          <p>
+            The owner named the café after the Poisson process, because the customers really do arrive at random. Every week brings a new question: another barista for lunch? A matcha promotion? What if the coffee machine slows down? Ideas like these cannot be tested on real customers, so the owner has hired your group.</p>
+          <p>
+            The café is open all day, but lunch is the rush, and your model covers the lunch session (12:00–14:00); at 14:00 the door closes for a one-hour staff break. During lunch, <strong>two baristas</strong> serve about 30 customers an hour from one line. Classic drinks (Americano, latte, Thai tea…) take about 2 minutes, sell for ฿85 and use ฿25 of ingredients; specialty drinks (matcha latte, frappé, smoothie…) take about 4 minutes, sell for ฿120 and use ฿40 of ingredients. Each barista costs ฿120 an hour for the full two hours. Customers give up after 5–15 minutes of waiting, and only 8 people fit in the line.
+          </p>
+          <p>
+            You do not need the most complicated café. You need a model that is correct, easy to change, reproducible (the same seed gives the same result), and useful for a decision. Every member of the group must understand the code and be ready to explain it.
+          </p>
+        </div>
+
+        <div class="weight-grid" aria-label="Project mark allocation">
+          <article><strong>4</strong><span>Prepared simulation</span></article>
+          <article><strong>3</strong><span>Live challenge</span></article>
+          <article><strong>2</strong><span>Pitch (1) and individual oral (1)</span></article>
+          <article class="total"><strong>9%</strong><span>Total course mark</span></article>
+        </div>
+
+        <div class="notice">
+          <strong>A group of three, and 15 peer points</strong>
+          <p>You work in a group of three for the whole project. At the end, each member privately shares <strong>15 points</strong> among all three members, including themselves, using a <strong>Google Form</strong> (the link will be posted in Google Classroom). Equal work is <strong>5, 5, 5</strong>; otherwise move points to show who did more or less, using at most one decimal place (for example 5.1, 4.9, 5.0). A total below 15 is fine. Every point <strong>above 15</strong> is taken off your own project mark. If you do not hand in your points, they count as 5, 5, 5. Each member's share of the group marks is weighted according to the points they receive.</p>
+        </div>
+
+        <div class="notice important">
+          <strong>Readiness rule</strong>
+          <p>Your final <code>cafe_model.py</code> must show <strong>PASS</strong> in the checker on this page before the hackathon. A file that shows <strong>FAIL</strong> is not ready. A PASS is strong evidence that your model follows the rules, but it does not mark your notes, your experiments, or your explanation.</p>
+        </div>
+      </section>
+
+      <section id="requirements" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Minimum Model</p>
+          <h2>What your café model must have</h2>
+        </div>
+        <div class="requirements-grid">
+          <article><span>01</span><h3>Lunch session</h3><p>A 120-minute lunch session (12:00–14:00), with accepted customers allowed to finish after the door closes.</p></article>
+          <article><span>02</span><h3>Random demand</h3><p>Random arrivals ordering classic or specialty drinks.</p></article>
+          <article><span>03</span><h3>Random service</h3><p>Service times that depend on order type and use the supplied seed.</p></article>
+          <article><span>04</span><h3>Resources</h3><p>A configurable number of identical baristas.</p></article>
+          <article><span>05</span><h3>Queue</h3><p>One FCFS queue with a configurable maximum length; customers who find it full balk and are lost.</p></article>
+          <article><span>06</span><h3>Impatient customers</h3><p>Customers whose patience runs out before service starts leave the queue (renege) and are lost.</p></article>
+          <article><span>07</span><h3>Event logic</h3><p>Arrival, service-start, service-completion, and patience-expiry events on one simulation clock.</p></article>
+          <article><span>08</span><h3>Economics and outputs</h3><p>Customer counts, waiting measures, utilisation, revenue, ingredient and staffing cost, and profit.</p></article>
+          <article><span>09</span><h3>Replication</h3><p>One result per supplied seed so uncertainty can be estimated.</p></article>
+          <article><span>10</span><h3>Flexibility</h3><p>Inputs must come from <code>config</code>; do not hard-code the baseline values.</p></article>
+        </div>
+        <div class="table-wrap">
+          <table class="contract-table">
+            <thead><tr><th>Menu</th><th>In the code</th><th>Examples</th><th>Price</th><th>Ingredients</th><th>Mean time</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Classic drinks</strong></td><td><code>simple</code></td><td>Americano, latte, cappuccino, Thai tea, cocoa</td><td>฿85</td><td>฿25</td><td>2 min</td></tr>
+              <tr><td><strong>Specialty drinks</strong></td><td><code>complex</code></td><td>matcha latte, coffee frappé, mango smoothie, cocoa frappé</td><td>฿120</td><td>฿40</td><td>4 min</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="scope-note">
+          The owner's question on hackathon day may change the arrivals, the staff, the service times, who is served first, who may join the queue, the menu, a promotion, the equipment, or the end of the session.
+        </p>
+      </section>
+
+      <section id="interface" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Common Contract</p>
+          <h2>Your file must use this interface</h2>
+          <p>The assessed simulation must be a Python file named <code>cafe_model.py</code>. You may develop in a notebook, but the checker will not extract code from a notebook.</p>
+        </div>
+
+        <div class="code-card">
+          <div class="code-card-title">Required function names</div>
+          <pre><code>def simulate_cafe(config, seed):
+    """Return one complete replication as a dictionary."""
+
+def run_replications(config, seeds):
+    """Return one result row per seed as a pandas DataFrame."""</code></pre>
+        </div>
+
+        <p>
+          Do not rename these functions. Do not use <code>input()</code>, need anyone to edit your file, or automatically open a notebook, plot window, or menu when the file is loaded. Put experiments and plots under <code>if __name__ == "__main__":</code> at the bottom of the file, as in the template. Use Python 3.10 or later and only the standard library, NumPy, pandas, SciPy, and Matplotlib: these are the packages on the offline lab computers, so others (for example SimPy) will not be available on hackathon day.
+        </p>
+
+        <details open>
+          <summary>Model rules every group must follow</summary>
+          <div class="table-wrap">
+            <table class="contract-table">
+              <thead><tr><th>Part</th><th>Required rule</th></tr></thead>
+              <tbody>
+                <tr><td>Arrivals</td><td>Poisson process: independent exponential gaps with mean <code>60 / arrival_rate_per_hour</code> minutes, during <code>[0, run_minutes)</code>. A rate of 0 means nobody arrives.</td></tr>
+                <tr><td>Order type</td><td>Classic (<code>simple</code>) with probability <code>simple_order_probability</code>, otherwise specialty (<code>complex</code>), independently for each customer.</td></tr>
+                <tr><td>Service time</td><td>Exponential with mean <code>mean_service_simple</code> (classic) or <code>mean_service_complex</code> (specialty).</td></tr>
+                <tr><td>Patience</td><td>Uniform between <code>0.5 * mean_patience</code> and <code>1.5 * mean_patience</code>. A customer who has not <strong>started</strong> service by arrival time + patience reneges and is lost. <code>None</code> means customers never renege.</td></tr>
+                <tr><td>Queue limit</td><td><code>max_queue</code> counts customers waiting, not those in service. An arrival who finds every barista busy and <code>max_queue</code> customers waiting balks and is lost. <code>None</code> means no limit.</td></tr>
+                <tr><td>Discipline</td><td>One FCFS queue; a free barista serves the longest-waiting customer still in the queue.</td></tr>
+                <tr><td>End of session</td><td>At <code>run_minutes</code> the door closes for the staff break. Accepted customers finish; customers still waiting may renege after the door closes.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details open>
+          <summary>Required configuration entries</summary>
+          <div class="table-wrap">
+            <table class="contract-table">
+              <thead><tr><th>Key</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>run_minutes</code></td><td>Time during which new customers may arrive</td></tr>
+                <tr><td><code>arrival_rate_per_hour</code></td><td>Mean number of arrivals per hour</td></tr>
+                <tr><td><code>n_baristas</code></td><td>Number of identical baristas</td></tr>
+                <tr><td><code>simple_order_probability</code></td><td>Probability of a classic (simple) drink order</td></tr>
+                <tr><td><code>mean_service_simple</code></td><td>Mean classic-drink service time in minutes</td></tr>
+                <tr><td><code>mean_service_complex</code></td><td>Mean specialty-drink service time in minutes</td></tr>
+                <tr><td><code>mean_patience</code></td><td>Mean customer patience in minutes, or <code>None</code> for customers who never leave the queue</td></tr>
+                <tr><td><code>price_simple</code>, <code>price_complex</code></td><td>Selling prices in baht</td></tr>
+                <tr><td><code>cost_simple</code>, <code>cost_complex</code></td><td>Ingredient costs in baht</td></tr>
+                <tr><td><code>barista_cost_per_hour</code></td><td>Scheduled staffing cost per barista per hour</td></tr>
+                <tr><td><code>max_queue</code></td><td>Maximum number waiting (not in service), or <code>None</code> for no limit</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Baseline configuration supplied for development</summary>
+          <pre class="compact-code"><code>BASE_CONFIG = {
+    "run_minutes": 120.0,
+    "arrival_rate_per_hour": 30.0,
+    "n_baristas": 2,
+    "simple_order_probability": 0.45,
+    "mean_service_simple": 2.0,
+    "mean_service_complex": 4.0,
+    "mean_patience": 10.0,
+    "price_simple": 85.0,
+    "price_complex": 120.0,
+    "cost_simple": 25.0,
+    "cost_complex": 40.0,
+    "barista_cost_per_hour": 120.0,
+    "max_queue": 8,
+}</code></pre>
+        </details>
+
+        <details>
+          <summary>Required result dictionary</summary>
+          <div class="table-wrap">
+            <table class="contract-table">
+              <thead><tr><th>Field</th><th>Required meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>run_minutes</code></td><td>Configured arrival horizon</td></tr>
+                <tr><td><code>finish_time</code></td><td>Later of <code>run_minutes</code> (door closes) and the last completion</td></tr>
+                <tr><td><code>n_arrivals</code></td><td>Total arrivals</td></tr>
+                <tr><td><code>n_served</code></td><td>Customers who completed service</td></tr>
+                <tr><td><code>n_balked</code>, <code>n_reneged</code></td><td>Customers turned away by a full queue, and customers who left when their patience ran out</td></tr>
+                <tr><td><code>n_lost</code></td><td><code>n_balked + n_reneged</code></td></tr>
+                <tr><td><code>n_served_simple</code>, <code>n_served_complex</code></td><td>Completed classic and specialty orders</td></tr>
+                <tr><td><code>mean_wait</code>, <code>p90_wait</code>, <code>max_wait</code></td><td>Served customers' time from arrival to <em>start</em> of service, in minutes; use <code>np.percentile(waits, 90)</code> with NumPy's default (linear) method; other percentile definitions can fail the statistical checks.</td></tr>
+                <tr><td><code>throughput_per_hour</code></td><td><code>n_served / (run_minutes / 60)</code></td></tr>
+                <tr><td><code>utilisation</code></td><td>Busy time divided by <code>n_baristas * finish_time</code></td></tr>
+                <tr><td><code>revenue</code></td><td>Selling price of every completed order, in baht</td></tr>
+                <tr><td><code>total_cost</code></td><td>Ingredient cost of completed orders + <code>n_baristas * barista_cost_per_hour * run_minutes / 60</code></td></tr>
+                <tr><td><code>profit</code></td><td><code>revenue - total_cost</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>When nobody is served, waiting-time outputs must be <code>0.0</code>. Counts must satisfy <code>n_arrivals = n_served + n_lost</code>, <code>n_lost = n_balked + n_reneged</code>, and <code>n_served = n_served_simple + n_served_complex</code>.</p>
+        </details>
+      </section>
+
+      <section id="checker" class="section project-section checker-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Run Before Submission</p>
+          <h2>Test your <code>cafe_model.py</code> here</h2>
+          <p>Upload your file or paste all of it below. Your code runs in your own browser and is not uploaded anywhere. The first test needs an internet connection while Python loads.</p>
+        </div>
+
+        <div class="checker-shell">
+          <div class="checker-toolbar">
+            <label class="file-button" for="code-file">Choose cafe_model.py</label>
+            <input id="code-file" type="file" accept=".py,text/x-python">
+            <button id="load-template" class="tool-button" type="button">Load template</button>
+            <button id="download-code" class="tool-button" type="button">Download editor code</button>
+            <span id="file-name" class="file-name">No file selected</span>
+          </div>
+
+          <label class="editor-label" for="code-editor">Python code</label>
+          <textarea id="code-editor" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editor-help" placeholder="Paste the complete contents of cafe_model.py here."></textarea>
+          <p id="editor-help" class="editor-help">Your draft is saved only in this browser. The official submitted file remains your responsibility.</p>
+
+          <div class="run-row">
+            <button id="run-check" class="run-button" type="button">Run readiness check</button>
+            <button id="stop-check" class="stop-button" type="button" disabled>Stop and reset</button>
+            <div id="runtime-status" class="runtime-status" role="status" aria-live="polite">Checker not loaded</div>
+          </div>
+
+          <section class="result-panel" aria-labelledby="result-title">
+            <div class="result-heading">
+              <h3 id="result-title">Checker report</h3>
+              <span id="result-badge" class="result-badge neutral">Not run</span>
+            </div>
+            <pre id="checker-output" tabindex="0">Add your code, then select “Run readiness check”.</pre>
+          </section>
+        </div>
+
+        <details class="checks-list">
+          <summary>What the checker tests</summary>
+          <p><strong>Contract checks</strong></p>
+          <ul>
+            <li>The file loads and defines both required functions.</li>
+            <li>The official configuration works without editing the file, and the configuration dictionary is not changed.</li>
+            <li>Required results are numeric, finite, nonnegative where appropriate, and internally consistent.</li>
+            <li>Customer counts, order counts, revenue, cost, profit, and throughput balance.</li>
+            <li>No served customer waited longer than the largest possible patience.</li>
+            <li>The same seed reproduces a run and a different seed changes it.</li>
+            <li>Zero demand, single-drink menus, <code>max_queue = 0</code>, and <code>None</code> settings behave correctly.</li>
+            <li>The replication function returns one correct row per seed.</li>
+          </ul>
+          <p><strong>Statistical checks</strong></p>
+          <p>Your model is run for 100 seeds in each of six configurations (standard café, single barista, busy café with a short queue limit, very impatient customers, larger café with a different menu and prices, long quiet day). The average of each output is compared with the reference model. Your numbers will not match exactly, and they do not need to: the check fails only when the difference is more than 5 standard errors, which a correct model almost never produces. These checks run your model about 600 times and usually take under a minute.</p>
+        </details>
+
+        <div class="notice">
+          <strong>Backup command-line test</strong>
+          <p>If the browser checker is unavailable, download the checker below, save it as <code>check_cafe_submission.py</code>, and run <code>python check_cafe_submission.py GROUP_01/cafe_model.py</code>. The browser and command-line checkers run the same tests.</p>
+          <p><a class="button project-button" href="mini-project-checker.py" download="check_cafe_submission.py">Download the command-line readiness checker</a></p>
+        </div>
+      </section>
+
+      <section id="hackathon" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Week 16 Wednesday Lab</p>
+          <h2>Hackathon day: the owner's question</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <div class="timeline-time">Hour 1 · No AI, offline</div>
+            <h3>Answer the owner's question</h3>
+            <ol>
+              <li>Adapt a copy of the prepared simulation; keep <code>cafe_model.py</code> unchanged.</li>
+              <li>Compare the required policies.</li>
+              <li>Use the seeds printed on your card.</li>
+              <li>Run at least 40 replications per policy.</li>
+              <li>Prepare one table, one graph, and a 95% confidence interval.</li>
+              <li>Make a recommendation and identify one limitation.</li>
+              <li>After your pitch, hand in your changed code, the results table, the graph, and your pitch slides (the same files you used in your pitch), in the way announced at the start of the session.</li>
+            </ol>
+          </article>
+          <article>
+            <div class="timeline-time">Hour 2</div>
+            <h3>Pitch to the owner</h3>
+            <p>Each group receives six minutes: four minutes to pitch and two minutes for questions. All three members must speak.</p>
+            <ol>
+              <li>Student 1: model and assigned problem.</li>
+              <li>Student 2: experiment and results.</li>
+              <li>Student 3: recommendation and limitation.</li>
+            </ol>
+            <p><strong>Your pitch slides.</strong> Use as many slides as you like, but keep to four minutes. Prepare the first part at home: a title slide, and your café model (how a customer moves through the café, the main rules, and your checks). On the day, add the challenge at the end: the owner's question in one sentence; what you changed in the model; the plans you compared (same seeds, at least 40 runs); your table and graph, with the main difference and its 95% confidence interval (if it includes 0, say the plans cannot be told apart); one sentence of advice the owner can act on; and one limitation that could change it. Remember that the owner runs a café, not a statistics class: give your numbers in baht, minutes and customers.</p>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong>Hour 1 is AI Level 1: no AI, lab computers, no internet</strong>
+          <p>The lab computers have Python, Jupyter, NumPy, pandas, SciPy, and Matplotlib. You may use your own prepared files, your lab notebooks, the lecture notes, and Python's built-in help (<code>help(...)</code>, <code>?</code>, Shift+Tab). AI tools, the internet, phones, and other personal devices are not allowed, do not talk to other groups, and using AI or the internet is an academic-integrity violation. Bring your files and prepared slides on a USB drive, and in the Tuesday 17 November briefing check that your model, analysis script, slides, and the command-line checker work on a lab computer offline.</p>
+          <p><strong>Get ready for the owner's question.</strong> Build your model so you can easily add an arrival rate that changes during the day, a barista who is away or works only part of the day, a function that chooses the next customer, customer types with waits recorded by type, an analysis script that compares plans on the same 40 seeds, and the first part of your pitch slides. You may use AI to prepare these at home under the Level 3 rules.</p>
+        </div>
+      </section>
+
+      <section id="marking" class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Assessment</p>
+          <h2>Marking guide</h2>
+        </div>
+        <div class="rubric-grid">
+          <article>
+            <h3>Prepared simulation · 4 marks</h3>
+            <ul>
+              <li>Entities, queue, resources, events, and random inputs: 1.5</li>
+              <li>Reusable and configurable implementation: 1.0</li>
+              <li>Replications, seeds, outputs, and uncertainty: 1.0</li>
+              <li>Verification, documentation, and assumptions: 0.5</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Live challenge · 3 marks</h3>
+            <ul>
+              <li>Correct implementation of the assigned change: 1.0</li>
+              <li>Appropriate experiment and uncertainty: 1.0</li>
+              <li>Evidence-based recommendation and limitation: 1.0</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Pitch communication · 1 mark</h3>
+            <ul>
+              <li>Clear four-minute explanation with an effective table or graph: 1.0</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Individual understanding · 1 mark</h3>
+            <ul>
+              <li>Explains their contribution, code, modelling choice, result, and answer independently: 1.0</li>
+            </ul>
+          </article>
+        </div>
+        <div class="notice important">
+          <strong>Readiness-check scoring rule</strong>
+          <p>A PASS is compulsory but earns no marks by itself. If your submitted <code>cafe_model.py</code> shows FAIL, the mark for "Reusable and configurable implementation" (1.0) is 0. Other marks are given only for work that actually runs and that you can explain, and results that cannot be reproduced from your submitted code cannot earn experiment or recommendation marks.</p>
+        </div>
+        <p>The project is assessed on modelling quality, reproducibility, experimental reasoning, and explanation—not on which group produces the highest simulated profit.</p>
+      </section>
+
+      <section class="section project-section divided">
+        <div class="section-heading">
+          <p class="eyebrow">Submission</p>
+          <h2>Files to prepare</h2>
+        </div>
+        <pre class="folder-tree"><code>GROUP_01/
+├── cafe_model.py
+├── model_notes.md
+└── AI_USE.md</code></pre>
+        <p>Submit through Google Classroom by <strong>17 November 2026, 23:59</strong>.</p>
+        <p><code>model_notes.md</code> must describe the system, input assumptions, queue operation, output units, at least three verification checks, whether your model is a Markov chain and why or why not (what state you would need, and which rule, if any, breaks the Markov property), and one limitation.</p>
+        <p>The course AI Collaboration Level 3 policy applies. <code>AI_USE.md</code> is your group's <strong>AI Use Acknowledgment Statement</strong>: hand in one per group, in the same folder and by the same deadline as <code>cafe_model.py</code>. It covers everything you prepared before the hackathon; the first hour of the hackathon is AI-free, so it needs no statement.</p>
+        <p>Start from the <a href="mini-project-AI_USE_template.md" download="AI_USE_template.md">AI_USE template</a> and fill in five short sections: (1) tools used, or "We did not use any AI tool in this project."; (2) what you used each tool for, by file and part; (3) how you checked the output; (4) at least one AI output you changed or rejected, and what you did instead; (5) confirmation that every member can explain the AI-assisted parts, and who checked each part. In the oral questions, you may be asked to show and explain any part you list.</p>
+        <p>In the pitch, any member may be asked to explain any part of the code. Undeclared AI use, made-up results, or code that the group cannot explain are handled under the course academic-integrity policy.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>SCIM211 Simulation Modelling · Coffee Shop Simulation Hackathon</p>
+      <p><a href="index.html">Return to the course homepage</a></p>
+      <p>Updated <time datetime="2026-10-17">17 October 2026</time></p>
+    </footer>
+
+    <script type="module" src="mini-project.js?v=20261016"></script>
+  </body>
+</html>
