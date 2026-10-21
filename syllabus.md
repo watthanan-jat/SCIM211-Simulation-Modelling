@@ -81,7 +81,7 @@ The continuing context is a **Coffee Shop Simulation Project**. Each lab adds a 
 | Final examination | 25% | Individual 3-hour written examination |
 | Lab exercises | 21% | 7 assessed hands-on lab sessions |
 | Quizzes | 20% | Four quizzes offered; best two scores count |
-| Group Mini Project | 9% | Group simulation project and Week 16 Project Challenge |
+| Group Mini Project | 9% | Group simulation project and Week 17 Project Challenge |
 | **Total** | **100%** |  |
 
 Assessment is designed to measure conceptual understanding, computational skills, statistical reasoning, model construction, validation, and communication. Students may be asked to explain their work orally as part of the assessment of understanding.
@@ -144,7 +144,7 @@ Throughout the semester, each group will build a reusable coffee-shop simulation
 
 Before the challenge, by 17 November 2026 at 23:59, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the [readiness checker](docs/mini-project.html#checker). Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
 
-In Week 16, each group will receive an assigned **Project Challenge**. During the two-hour Wednesday hackathon, groups receive one hour to adapt the prepared model and run an appropriate experiment, followed by one hour of short pitches and questions. The first hour is **AI Level 1 (No AI)** on lab computers without an internet connection; the prepared model follows the course's Level 3 rules. Each group must interpret uncertainty and support a practical recommendation with evidence. See the [student handout](docs/mini-project.html) for the detailed requirements.
+In Week 17, on Wednesday 25 November, each group will receive an assigned **Project Challenge**. During the two-hour Wednesday hackathon, groups receive one hour to adapt the prepared model and run an appropriate experiment, followed by one hour of short pitches and questions. The first hour is **AI Level 1 (No AI)** on lab computers without an internet connection; the prepared model follows the course's Level 3 rules. Each group must interpret uncertainty and support a practical recommendation with evidence. See the [student handout](docs/mini-project.html) for the detailed requirements.
 
 ## 8. Course Timetable
 
@@ -176,8 +176,8 @@ Regular sessions are scheduled for **10:00–12:00**. Tuesday sessions focus on 
 | 14 | Wed 4 Nov | **Lab 7:** Validation and Final Recommendation |
 | 15 | Tue 10 Nov | Variance reduction and validation |
 | 16 | Tue 17 Nov | Hackathon briefing, model readiness check, offline test on the lab computers, and pitch guidance; assigned challenges remain unseen |
-| 16 | Wed 18 Nov | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge (no AI, offline lab computers) followed by group pitches and questions |
 | 17 | Tue 24 Nov | **Lecture:** Course review; **Quiz 4** |
+| 17 | Wed 25 Nov, 10:00–12:00 | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge (no AI, offline lab computers) followed by group pitches and questions |
 | — | To be announced | Final examination |
 
 The timetable may be adjusted when required by the University calendar. Any approved change will be announced through the course communication channel.
@@ -222,7 +222,7 @@ Students should retain an organised copy of their notebooks, code, data, results
 - Google Classroom is the official channel for class communication, announcements, and submission of assessed work.
 - Ask questions during lectures and labs; discussion is part of the learning process.
 - Submit work that you understand and can explain.
-- AI may support your learning, but it may not replace your own reasoning, modelling decisions, or understanding. The course follows AI Level 3, except the first hour of the Week 16 Project Challenge, which is AI Level 1 (No AI).
+- AI may support your learning, but it may not replace your own reasoning, modelling decisions, or understanding. The course follows AI Level 3, except the first hour of the Week 17 Project Challenge, which is AI Level 1 (No AI).
 - Follow Faculty and University rules for assessment, academic integrity, attendance, and evidence for absence.
 - Use course data and computing resources responsibly.
 - Follow the course [Academic Integrity and AI Policy](ai_policy.md) when using references, generative AI, or coding assistants.

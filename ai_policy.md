@@ -32,7 +32,7 @@ Students are encouraged to use AI tools as collaborators to support learning, pa
 
 ### Assessment with a Different AI Level
 
-The first hour of the Week 16 Project Challenge (the hackathon) is **AI Level 1 — No AI**. It takes place on lab computers without an internet connection. Students may use their own prepared files, lab notebooks, course lecture notes, and Python's built-in help, but no AI tools, internet, or personal devices. Using AI or the internet during that hour is an academic-integrity violation. The prepared model submitted before the hackathon, and the pitches in the second hour, follow the Level 3 rules below.
+The first hour of the Week 17 Project Challenge (the hackathon) is **AI Level 1 — No AI**. It takes place on lab computers without an internet connection. Students may use their own prepared files, lab notebooks, course lecture notes, and Python's built-in help, but no AI tools, internet, or personal devices. Using AI or the internet during that hour is an academic-integrity violation. The prepared model submitted before the hackathon, and the pitches in the second hour, follow the Level 3 rules below.
 
 ### Permitted Uses
 

@@ -38,8 +38,8 @@ Teaching begins on **Tuesday 4 August 2026**. There is no regular class during *
 | 14 | Wed 4 Nov | **Lab 7:** Validation and Final Recommendation |
 | 15 | Tue 10 Nov | Variance reduction and validation |
 | 16 | Tue 17 Nov | Hackathon briefing, model readiness check, and pitch guidance; assigned challenges remain unseen |
-| 16 | Wed 18 Nov | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge followed by group pitches and questions |
 | 17 | Tue 24 Nov | **Lecture:** Course review; **Quiz 4** |
+| 17 | Wed 25 Nov, 10:00–12:00 | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge followed by group pitches and questions |
 | — | To be announced | Final examination |
 
 ## Quiz Schedule
@@ -63,7 +63,7 @@ The seven assessed labs develop one continuing Coffee Shop Simulation Project:
 6. Model customer loyalty using Markov chains.
 7. Validate the model and develop a defensible recommendation.
 
-In Week 16, eight groups of three apply their prepared models to different assigned Project Challenges. The Wednesday session uses the first hour for model adaptation and experimentation and the second hour for pitches and questions. Every prepared `cafe_model.py` must pass the published readiness checker before the hackathon.
+In Week 17, eight groups of three apply their prepared models to different assigned Project Challenges. The Wednesday 25 November session uses the first hour for model adaptation and experimentation and the second hour for pitches and questions. Every prepared `cafe_model.py` must pass the published readiness checker before the hackathon.
 
 ## Important Notes
 

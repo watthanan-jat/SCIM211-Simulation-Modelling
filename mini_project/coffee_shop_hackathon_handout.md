@@ -72,7 +72,7 @@ So the owner has hired your group. Your job is to build a **simulation of Café
 Poisson**: a Python model of the café that can be run again and again under different
 plans.
 
-In the Week 16 Wednesday lab, the owner will send each group one urgent question that
+In the Week 17 Wednesday session (25 November), the owner will send each group one urgent question that
 you have not seen before. You will have one hour to adapt your model, run an
 experiment, and decide what the café should do. In the second hour, you will pitch
 your advice to the owner (and to the class).
@@ -402,7 +402,7 @@ your notes, your experiments, or your explanation of the code.
 Run the checker after every important change. Do not wait until the hackathon to try
 it for the first time.
 
-## Hackathon Day (Week 16)
+## Hackathon Day (Week 17, Wednesday 25 November)
 
 ### First-hour rules: no AI, lab computers, no internet
 

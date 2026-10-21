@@ -75,7 +75,7 @@ You will model questions such as:
 
 Each lab adds one new piece to the project. By the end, you should have a clearer sense of how a simulation study is built from data, assumptions, code, output analysis, and judgement.
 
-The semester mini project is the **Coffee Shop Simulation Hackathon**. In a group of three, you will build a reusable simulation model and respond to an operational scenario during the Week 16 Wednesday lab. Read the [student handout and test your code](docs/mini-project.html) before the hackathon.
+The semester mini project is the **Coffee Shop Simulation Hackathon**. In a group of three, you will build a reusable simulation model and respond to an operational scenario during the Week 17 Wednesday session. Read the [student handout and test your code](docs/mini-project.html) before the hackathon.
 
 ## Lab Pathway
 
@@ -108,8 +108,8 @@ The semester mini project is the **Coffee Shop Simulation Hackathon**. In a grou
 | 13 | Tue 27 Oct, 10:00-12:00 | Markov chains II; Quiz 3 | - |
 | 14 | Tue 3 Nov, 10:00-12:00 | Input/output analysis | Wed 4 Nov, 10:00-12:00: Lab 7 |
 | 15 | Tue 10 Nov, 10:00-12:00 | Variance reduction and validation | - |
-| 16 | Tue 17 Nov, 10:00-12:00 | Hackathon briefing | Wed 18 Nov, 10:00-12:00: Coffee Shop Simulation Hackathon |
-| 17 | Tue 24 Nov, 10:00-12:00 | Course review; Quiz 4 | - |
+| 16 | Tue 17 Nov, 10:00-12:00 | Hackathon briefing | - |
+| 17 | Tue 24 Nov, 10:00-12:00 | Course review; Quiz 4 | Wed 25 Nov, 10:00-12:00: Coffee Shop Simulation Hackathon |
 
 ## How To Use Each Lab
 

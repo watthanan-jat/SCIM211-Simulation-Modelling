@@ -10,7 +10,7 @@ Assessment in SCIM211 Simulation Modelling measures conceptual understanding, co
 | Final examination | 25% | Individual written examination |
 | Lab exercises | 21% | Seven assessed hands-on lab sessions |
 | Quizzes | 20% | Four quizzes offered; best two scores count |
-| Group Mini Project | 9% | Group simulation project and Week 16 Project Challenge |
+| Group Mini Project | 9% | Group simulation project and Week 17 Project Challenge |
 | **Total** | **100%** |  |
 
 Students may be asked to explain their code, calculations, modelling choices, and conclusions orally to demonstrate individual understanding.
@@ -92,7 +92,7 @@ Throughout the semester, each group will build a reusable coffee-shop simulation
 
 Before the challenge, by 17 November 2026 at 23:59, each group must submit a `cafe_model.py` file using the common project interface and obtain **PASS** from the [readiness checker](docs/mini-project.html#checker). A file that fails the checker is not operationally ready. Passing checks the interface and basic consistency; it does not by itself establish that the model is scientifically correct.
 
-In Week 16, each group will receive an assigned **Project Challenge**. The group must:
+In Week 17, on Wednesday 25 November, each group will receive an assigned **Project Challenge**. The group must:
 
 1. apply the simulation model it has built;
 2. make the required changes for the assigned scenario;
@@ -141,7 +141,7 @@ This course follows **AI Collaboration — Level 3**, as described in MUIC’s *
 
 Students are encouraged to use AI tools as collaborators to support learning, particularly for drafting, idea generation, and feedback. However, all submitted work must demonstrate **critical engagement, meaningful human revision, and independent thinking**.
 
-**Exception:** the first hour of the Week 16 Project Challenge is **AI Level 1 — No AI**. It takes place on lab computers without an internet connection. Students may use their own prepared files, lab notebooks, course lecture notes, and Python's built-in help, but no AI tools, internet, or personal devices. Using AI or the internet during that hour is an academic-integrity violation.
+**Exception:** the first hour of the Week 17 Project Challenge is **AI Level 1 — No AI**. It takes place on lab computers without an internet connection. Students may use their own prepared files, lab notebooks, course lecture notes, and Python's built-in help, but no AI tools, internet, or personal devices. Using AI or the internet during that hour is an academic-integrity violation.
 
 ### Permitted Uses
 
