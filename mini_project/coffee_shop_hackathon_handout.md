@@ -416,10 +416,9 @@ your own model well enough to change it.
   (`help(...)`, `?` and Shift+Tab in Jupyter).
 - You may not use any AI tool, the internet, phones, or other personal devices. Do
   not talk to other groups.
-- Bring your files and prepared slides on a USB drive (or as told in the briefing).
-  In the Tuesday 17 November briefing, copy them to a lab computer and check that
-  your model, your analysis script, your slides, and the command-line checker all
-  work there with no internet.
+- Bring your files and prepared slides on a USB drive (or as instructed in Google Classroom).
+  Before the hackathon, check that your model, analysis script, slides, and
+  command-line checker work without internet.
 
 Using AI or the internet in the first hour breaks the academic-integrity rules and is
 handled under the course academic-integrity policy. The second hour (pitches and
@@ -514,8 +513,8 @@ Remember that the owner runs a café, not a statistics class. Give your numbers 
 baht, minutes and customers. Be ready for questions like "Why do you trust these
 numbers?" and "What would change your advice?"
 
-Bring your prepared slides on the USB drive with your code, and check in the Tuesday
-briefing that they open on a lab computer without the internet.
+Bring your prepared slides on the USB drive with your code, and check before
+the hackathon that they open without the internet.
 
 ## Marking Guide
 

@@ -169,13 +169,13 @@ Regular sessions are scheduled for **10:00–12:00**. Tuesday sessions focus on 
 | 10 | ~~Wed 7 Oct, 10:00–12:00~~ | ~~Lab 5 session~~ Postponed due to the midterm examination |
 | 11 | ~~Tue 13 Oct, 10:00–12:00~~ | ~~Lecture~~ Public holiday |
 | 11 | Wed 14 Oct, 09:00–12:00 | Discrete-event simulation and **Lab 5 demo** |
-| 12 | Tue 20 Oct | Markov chains I: states, transition matrices, and multi-step transitions |
+| 12 | Tue 20 Oct | **Lecture:** Markov Chain I: states, transition matrices |
 | 12 | **Wed 21 Oct, 09:00–12:00** | **Lab 6:** Markov Chains and Customer Loyalty |
-| 13 | Tue 27 Oct | Markov chains II: long-run behaviour, stationary distributions, and interpretation; **Quiz 3** |
-| 14 | Tue 3 Nov | Input/output analysis: input data, distribution fitting, replications, and confidence intervals |
+| 13 | Tue 27 Oct | **Lecture:** Markov Chain II: multi-step transitions; **Quiz 3** |
+| 14 | Tue 3 Nov | **Lecture:** Markov Chain III: long-run behaviour, stationary distributions |
 | 14 | Wed 4 Nov | **Lab 7:** Validation and Final Recommendation |
-| 15 | Tue 10 Nov | Variance reduction and validation |
-| 16 | Tue 17 Nov | Hackathon briefing, model readiness check, offline test on the lab computers, and pitch guidance; assigned challenges remain unseen |
+| 15 | Tue 10 Nov | **Lecture:** Input and output analysis |
+| 16 | Tue 17 Nov | **Lecture:** Variance reduction and validation |
 | 17 | Tue 24 Nov | **Lecture:** Course review; **Quiz 4** |
 | 17 | Wed 25 Nov, 10:00–12:00 | **Coffee Shop Simulation Hackathon:** one-hour assigned challenge (no AI, offline lab computers) followed by group pitches and questions |
 | — | To be announced | Final examination |

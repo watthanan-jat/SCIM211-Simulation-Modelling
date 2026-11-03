@@ -104,11 +104,11 @@ The semester mini project is the **Coffee Shop Simulation Hackathon**. In a grou
 | - | 28 Sep-2 Oct | Midterm week | No class |
 | 10 | Tue 6 Oct, 10:00-12:00 | Monte Carlo simulation and Lab 4 demos | ~~Wed 7 Oct, 10:00-12:00: Lab 5~~ Postponed due to the midterm examination |
 | 11 | ~~Tue 13 Oct, 10:00-12:00: lecture~~ | Public holiday | Wed 14 Oct, 09:00-12:00: discrete-event simulation and Lab 5 demo |
-| 12 | Tue 20 Oct, 10:00-12:00 | Markov chains I | **Wed 21 Oct, 09:00-12:00**: Lab 6 |
-| 13 | Tue 27 Oct, 10:00-12:00 | Markov chains II; Quiz 3 | - |
-| 14 | Tue 3 Nov, 10:00-12:00 | Input/output analysis | Wed 4 Nov, 10:00-12:00: Lab 7 |
-| 15 | Tue 10 Nov, 10:00-12:00 | Variance reduction and validation | - |
-| 16 | Tue 17 Nov, 10:00-12:00 | Hackathon briefing | - |
+| 12 | Tue 20 Oct, 10:00-12:00 | Markov Chain I: states, transition matrices | **Wed 21 Oct, 09:00-12:00**: Lab 6 |
+| 13 | Tue 27 Oct, 10:00-12:00 | Markov Chain II: multi-step transitions; Quiz 3 | - |
+| 14 | Tue 3 Nov, 10:00-12:00 | Markov Chain III: long-run behaviour, stationary distributions | Wed 4 Nov, 10:00-12:00: Lab 7 |
+| 15 | Tue 10 Nov, 10:00-12:00 | Input and output analysis | - |
+| 16 | Tue 17 Nov, 10:00-12:00 | Variance reduction and validation | - |
 | 17 | Tue 24 Nov, 10:00-12:00 | Course review; Quiz 4 | Wed 25 Nov, 10:00-12:00: Coffee Shop Simulation Hackathon |
 
 ## How To Use Each Lab
